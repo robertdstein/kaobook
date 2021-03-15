@@ -1,7 +1,5 @@
 # kaobook
 
-A LaTeX class for books, reports or theses.
-
 ## Acknowledgements
 
 This class is based on the work of [Ken Arroyo 
@@ -93,6 +91,71 @@ The class is documented and exemplified in the
 [example\_and\_documentation.pdf](example_and_documentation.pdf) file. 
 The easiest way to start using the class is to open one of the examples 
 and start editing them.
+
+## Compiling the examples
+
+In the `examples` directory of this repository you can find several
+documents exemplifying the kaobook class. For the sake of simplicity
+I shall list the commands to compile only the documentation, but the
+compilation of the other examples would proceed in the same way. Also,
+you can replace pdflatex with your favorite engine, like *e.g.* xelatex.
+
+### From the command line (Unix-like operating systems)
+
+`cd` into the root of the repository, and run
+```
+pdflatex -output-directory examples/documentation main # The .tex is optional
+biber -output-directory examples/documentation main
+pdflatex -output-directory examples/documentation main
+pdflatex -output-directory examples/documentation main
+pdflatex -output-directory examples/documentation main
+```
+
+To compile the glossary and nomenclature as well, `cd` into the 
+`examples/documentation` directory and run
+```
+makeindex main.nlo -s nomencl.ist -o main.nls
+makeglossaries main
+```
+Then, `cd` back into the root of the repository and re-run pdflatex.
+
+NOTE: sometimes LaTeX needs more than one run to get the correct
+position of each element; this is true in particular for the positioning
+of floating elements like figures, tables, and margin notes.
+Occasionally, LaTeX can need up to four re-runs, so If the alignment of
+margin elements looks odd, or if they bleed into ther main text, try
+runnign pdflatex one more time.
+
+## Updating kaobook
+
+To update kaobook you should download the whole repository (or one of
+the releases) again, and replace all of your old files with the newer
+ones, *except* for the main.tex and the files that you have created,
+like the chapters of the book. The crucial files that pertain to kaobook
+and that you always have to update are:
+
+1. `kaobook.cls`;
+2. `kaohandt.cls`;
+3. the whole `styles` directory.
+
+These files should be in the same folder as your `main.tex`. Even if a
+file has not been modified, I would still suggest to replace everything
+because it is easier.
+
+In practice, I would do as follows. I would have a directory, called for 
+example 'my\_book', with all the files necessary for the book: 
+`kaobook.cls`, `kaohand.cls`, the `styles` directory, and the 
+`main.tex`. I like to have a separate file for each chapter, so I would 
+also have a directory called `chapters`, with all the `.tex` files with 
+the actual chapters. Then, when I want to update kaobook, I would 
+download the GitHub repository (or one of the releases) into a directory 
+called 'kaobook', and finally copy the `kaobook.cls`, `kaohandt.cls`, 
+and the whole `styles` directory from 'kaobook' to 'my\_book'. Once the 
+update is completed, the whole 'my\_book' directory can be uploaded on 
+Overleaf or on a personal ShareLaTeX server.
+
+Alternatively, advanced users can download the repository in their local 
+texmf tree; see the [instructions](instructions) directory for hints.
 
 ## Repository Schema
 

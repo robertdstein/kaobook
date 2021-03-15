@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % kaobook
 % LaTeX Class
-% Version 0.9.3 (2020/12/09)
+% Version 0.9.5 (2020/12/30)
 %
 % This template originates from:
 % https://www.LaTeXTemplates.com
@@ -25,12 +25,16 @@
 %----------------------------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{kaobook}[2020/12/09 v0.9.3 kaobook]
-
-\RequirePackage{xkeyval} % Manage class key-value options
-
-\newcommand{\@classname}{kaobook} % Class name
+\ProvidesClass{kaobook}[2020/12/30 v0.9.5 kaobook]
 \newcommand{\@baseclass}{scrbook} % Base class name
+
+%\RequirePackage{xkeyval} % Manage class key-value options
+\RequirePackage{kvoptions} % Manage class key-value options
+
+\SetupKeyvalOptions{
+    family = kao,
+    prefix = kao@
+}
 
 % Set the default options
 \PassOptionsToClass{a4paper}{\@baseclass}
@@ -38,14 +42,14 @@
 \PassOptionsToClass{parskip=half}{\@baseclass}
 \PassOptionsToClass{headings=optiontoheadandtoc}{\@baseclass}
 
-\newcommand{\@secnumdepth}{1} % Set default numbering depth up to sections
-\DeclareOptionX{secnumdepth}{% % Declare secnumdepth as an option
-	\renewcommand{\@secnumdepth}{#1}%
-}
+% Define kao-specific options
+\DeclareStringOption[1]{secnumdepth}
 
-\DeclareOptionX*{\PassOptionsToClass{\CurrentOption}{\@baseclass}} % Pass through any options to the base class
+% Pass through any other options to the base class
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{\@baseclass}} 
 
-\ProcessOptionsX\relax % Process the options
+\ProcessKeyvalOptions*
+\ProcessOptions\relax % Process the options
 
 \LoadClass{\@baseclass} % Load the base class
 \RequirePackage{styles/kao} % Load the code common to all classes
@@ -71,7 +75,7 @@
 \renewcommand{\mainmatter}{%
 	% Add a blank page before the main matter if the front matter has an
 	% odd number of pages
-	\ifthispageodd{%
+	\Ifthispageodd{%
 	  \afterpage{\blankpage}%
 	}{}%
 	\oldmainmatter% Call the old command
@@ -120,28 +124,25 @@
 		\autodot\IfUsePrefixLine{}{\enskip}}}
 
 	\RedeclareSectionCommand[beforeskip=0cm,afterskip=10\vscale]{chapter}
-	\setlength{\mtocshift}{-32\vscale}
+	\setlength{\mtocshift}{-1\vscale}
 }
 
-\newlength{\kao@chfsize}% Store the dimension of the font used for chapter. It is used to increase the size of the vertical rule of a size equal to that, so that the rule protrudes of that length into the frame of the main text.
-\newlength{\kao@headfsize}% Store the dimension of the font used for chapter. It is used to increase the size of the vertical rule of a size equal to that, so that the rule protrudes of that length into the frame of the main text.
 
 % The Kao style
 \DeclareDocumentCommand{\chapterstylekao}{}{%
 	\renewcommand*{\chapterformat}{%
 		\mbox{\chapappifchapterprefix{\nobreakspace}\scalebox{2.85}{\thechapter\autodot}}%
 	}%
-	\setlength{\kao@chfsize}{\dimexpr 1mm * \f@size}%
 	\renewcommand\chapterlinesformat[3]{%
-		\vspace*{-27.4\vscale}%
-		\makebox[0pt][l]{%
+		\vspace{3.5\vscale}%
+		\smash{\makebox[0pt][l]{%
 			\parbox[b]{\textwidth}{\flushright{##3}}%
-			\makebox[\marginparsep][c]{\rule[-2\vscale]{1pt}{27.4\vscale+\kao@chfsize}}%
+			\makebox[\marginparsep][c]{\rule[-2\vscale]{1pt}{27.4\vscale+\f@size mm}}%
 			\parbox[b]{\marginparwidth}{##2}%
-		}%
+		}}%
 	}%
 	\RedeclareSectionCommand[beforeskip=0cm,afterskip=10\vscale]{chapter}%
-	\setlength{\mtocshift}{0mm}%
+	\setlength{\mtocshift}{-1\vscale}%
 }
 
 % Lines
@@ -168,26 +169,23 @@
 	  }\\
 	  \makebox[0pt][l]{%
 		\makebox[\textwidth+\marginparsep+\marginparwidth][l]{\hrulefill[1.1pt]}%
-		%\makebox[\textwidth][l]{\hrulefill}%
-		%\makebox[\marginparsep][l]{\hrulefill}%
-		%\makebox[\marginparwidth][l]{\hrulefill}%
 	  }%
 	}%
 	\RedeclareSectionCommand[beforeskip=0cm,afterskip=10\vscale]{chapter}
-	\setlength{\mtocshift}{25\vscale}%
+	\setlength{\mtocshift}{-1\vscale}%
 }
 
 % Image (Used internally for \chapterimage; normal users should not need this command)
 \DeclareDocumentCommand{\chapterstyleimage}{m}{%
 	\renewcommand*{\chapterformat}{%
 		\mbox{\chapappifchapterprefix{\nobreakspace}\thechapter%
-		\autodot\IfUsePrefixLine{}{\enskip}}
+		\autodot\IfUsePrefixLine{}{\enskip}}%
 	}
 	\renewcommand{\chapterlinesformat}[3]{%
 		\begin{tikzpicture}[remember picture, overlay]
 			\node[
 				anchor=south west,
-				xshift=\dimexpr - \hoffset - \oddsidemargin - 1in,%-30\hscale,
+				xshift=\dimexpr - \hoffset - \oddsidemargin - 1in -1mm,%-30\hscale,
 				yshift=4.3mm,
 				rectangle,
 				fill=gray!20!white,
@@ -195,7 +193,7 @@
 				inner ysep=5\vscale,
 				inner xsep=\dimexpr \hoffset + \oddsidemargin + 1in,%30\hscale,
 				text opacity=1,
-				text width=\paperwidth-50\hscale,
+				text width=\paperwidth-40\hscale,
 			]{\@hangfrom{##2}{##3}};
 		\end{tikzpicture}
 	}
@@ -245,7 +243,7 @@
 %	NUMBERING
 %----------------------------------------------------------------------------------------
 
-\setcounter{secnumdepth}{\@secnumdepth} % Set section numbering depth
+\setcounter{secnumdepth}{\kao@secnumdepth} % Set section numbering depth
 
 \counterwithin*{sidenote}{chapter} % Uncomment to reset the sidenote counter at each chapter
 %\counterwithout{sidenote}{chapter} % Uncomment to have one sidenote counter for the whole document
