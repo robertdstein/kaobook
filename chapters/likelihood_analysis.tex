@@ -73,18 +73,19 @@ The atmospheric background rates depend on atmospheric densities which are ultim
 
 \subsection*{Background Spatial PDF}
 
-\begin{marginfigure}
-	\centering \includegraphics{llh/sindec}
-	\caption{Event rate as a function of $\sin(\delta)$.}
-	\label{fig:sindec}
-\end{marginfigure}
-
 The spatial distribution of the background can be neatly factorised into two distinct components, namely a zenith and an azimuth component:
 
 \begin{equation}
 	\mathcal{B}_{\textup{space}} (\theta, \phi) = \mathcal{B}_{\theta}(\theta) \times \mathcal{B}_{\phi}(\phi, \theta)
 	\label{eq:b_space_local}
 \end{equation}
+
+
+\begin{marginfigure}
+	\centering \includegraphics{llh/sindec}
+	\caption{Event rate as a function of $\sin(\delta)$.}
+	\label{fig:sindec}
+\end{marginfigure}
 
 Owing to IceCube's convenient location at the geographic south pole, the zenith-dependent detector response can be uniquely mapped into a declination-dependent one. With a data-driven background model, we can define a PDF $f_{\delta}(\delta)$ based on the declination-dependent event rate, as seen in Figure \ref{fig:sindec}.
 
@@ -93,13 +94,13 @@ Owing to IceCube's convenient location at the geographic south pole, the zenith-
 	\label{eq:b_theta}
 \end{equation}
 
+The additional azimuthal component can be seen in Figure \ref{fig:azimuth}. The detector itself (see Chapter \ref{ch:icecube}) has 6 string axes, and these are clearly visible with elevated event rates. These variations reach up to $\sim40\%$ variations for the southern hemisphere. Additionally, the impact of \emph{ice anistropy} can be seen from an event rate deficit at and below the horizon \sidecite{2019ICRC...36..854C}, aligned with the axes of maximal charge deficit at $\sim2\pi / 3$ and $5\pi / 3$. 
+
 \begin{marginfigure}
 	\centering \includegraphics{llh/azimuth}
 	\caption{Declination-normalised event rate as a function of azimuth.}
 	\label{fig:azimuth}
 \end{marginfigure}
-
-The additional azimuthal component can be seen in Figure \ref{fig:azimuth}. The detector itself (see Chapter \ref{ch:icecube}) has 6 string axes, and these are clearly visible with elevated event rates. These variations reach up to $\sim40\%$ variations for the southern hemisphere. Additionally, the impact of \emph{ice anistropy} can be seen from an event rate deficit at and below the horizon \sidecite{2019ICRC...36..854C}, aligned with the axes of maximal charge deficit at $\sim 120$ and $\sim 300$ degrees. 
 
 However, string axes will all be traced out over the course of each day. Thus, for typical data periods of many years, these azimuthal variations will be averaged out. It is therefore typically assumed that \emph{any variations due to azimuthal asymmetry are negligible}.  An exception must be made for searches targeting clustering over short (sub-day) time periods, where this azimuthal asymmetry may have an impact. Beyond this, as long as the azimuth asymmetry can be neglected, we then find that the distribution in right ascension is uniform:
 
@@ -473,8 +474,8 @@ However, there is an inherent bias in such a cluster search, because there are m
 An example of this cluster search, as used for the source AT2018cow (see Chapter \ref{ch:results}), demonstrates the impact on discovery potential. Given the additional degrees of freedom, there is more scope for background fluctuations, so the threshold for discovery is higher in the case that neutrino emission extends over the full search window. However, for shorter neutrino emission periods, the discovery potential is much reduced.
 
 \begin{figure}[!ht]
-	\centering \includegraphics{results/flare_vs_box_disc}
-	\caption{The $5\sigma$ Discovery Potential for AT2018cow, in both total fluence and isotropic-equivalent energy, as a function of flare length.}
+	\centering \includegraphics{llh/flare_vs_box}
+	\caption{Estimated $5\sigma$ Discovery Potential for AT2018cow as a function of flare length, given in units of total fluence for an E$^{-2}$ spectrum over the 130 day search window.}
 	\label{fig:DiscTime}
 \end{figure}
 
