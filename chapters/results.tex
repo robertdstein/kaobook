@@ -36,9 +36,9 @@ From the starting point of all TDEs, one distinct subsample was created:
 	\item \textbf{Jetted TDEs} are X-Ray-bright TDEs which launched relativistic jets pointing towards the Earth. There are three jetted TDEs, and neutrino emission is most promising from this category
 \end{itemize}
 
-These three jetted TDEs share similar properties, namely that they were all sufficiently bright to be discovered by the \textit{Swift}-BAT X-ray telescope. They each have well-sampled lightcurves, with the time of jet-launching constrained to a window of a few days. Given the consistent observational features of luminous, hard X-ray emission which rapidly fades, it is likely that all three objects are indeed jetted TDEs. The jetted TDEs were used to test Hypothesis 1.
+These three jetted TDEs share similar properties, namely that they were all sufficiently bright to be discovered serendipitously by observations of the \textit{Swift}-BAT X-ray telescope. They each have well-sampled lightcurves, with the time of jet-launching constrained to a window of a few days. Given the consistent observational features of luminous, hard X-ray emission which rapidly fades, it is likely that all three objects are indeed jetted TDEs. The jetted TDEs were used to test Hypothesis 1.
 
-Hypothesis 2 could then be tested with the remaining "non-jetted" TDEs, defined as those TDEs without on-axis relativistic jets. These non-jetted TDEs form an observationally-distinct class of objects. They may have off-axis relativistic jets, or mildly relativistic outflows, but none exhibit the characteristic hard X-ray emission associated with on-axis relativistic jets .
+Hypothesis 2 could then be tested with the remaining ``non-jetted'' TDEs, defined as those TDEs without on-axis relativistic jets. These non-jetted TDEs form an observationally-distinct class of objects. They may have off-axis relativistic jets, or mildly relativistic outflows, but none exhibit the characteristic hard X-ray emission associated with on-axis relativistic jets .
 
 Beyond this, the properties of non-jetted TDEs are highly heterogeneous. They are discovered across a range of wavelengths (e.g X-ray, Optical, IR) with varying multi-wavelength coverage. There are a handful of compelling TDE candidates, often with comprehensive multi-epoch spectroscopic observations, for which alternative explanations are disfavoured. However, in the vast majority of cases, a definite classification cannot be made. To avoid contamination from misclassified objects, primarily AGN or SN, we define a clean "golden sample" consisting solely of reliably-classified TDEs:
 
@@ -48,7 +48,7 @@ Beyond this, the properties of non-jetted TDEs are highly heterogeneous. They ar
 
 The remaining objects are then candidate TDEs, with a possible but not definitive classification. 
 
-There is one distinct subclass consisting of flares observed in dusty galaxies via IR emission \sidecite{wang_mir_tdes_2018}. One possible explanation is that the flares arise from a dust-obscured TDE, with the dust then slowly reprocessing the electromagnetic radiation from the galaxy core.  For such reprocessing, there would be a time delay between the disruption itself and the corresponding IR flare. As we expect that neutrinos should begin soon after disruption, the timescale for neutrino emission from obscured TDEs would have significant additional uncertainty. 
+There is one distinct subclass of candidates, containing flares observed in dusty galaxies via IR emission \sidecite{wang_mir_tdes_2018}. One possible explanation is that the flares arise from a dust-obscured TDE, with the dust then slowly reprocessing the electromagnetic radiation from the galaxy core.  For such reprocessing, there would be a time delay between the disruption itself and the corresponding IR flare. As we expect that neutrinos should begin soon after disruption, the timescale for neutrino emission from obscured TDEs would have significant additional uncertainty. 
 
 We thus treat these obscured TDEs separately from the other candidate TDEs:
 
@@ -83,7 +83,7 @@ All catalogues are summarised in Table \ref{tab:stacking_cat}, with full tables 
 To account for the heterogeneous datasets, an individual search window was defined for each TDE, with the aim for identifying the period of peak electromagnetic emission. For jetted/gold/silver TDE, the following criteria were used:
 
 \begin{itemize}
-	\item For TDEs in which the light curve was observed when rising, the first measurement is taken as the window start.
+	\item For TDEs in which the light curve was observed when rising, the first detection is taken as the window start.
 	
 	\item For TDEs without an observation during lightcurve rise, the last upper limit is taken as the window start.
 	
@@ -93,34 +93,34 @@ To account for the heterogeneous datasets, an individual search window was defin
 	
 \end{itemize}
 
-Applying these criteria gives a tailored search window for each TDE. Obscured TDEs instead had a search window extending from 300 days before peak to 100 days after peak, to account for potential delay following neutrino emission. These search windows are provided in the Appendix (Chapter \ref{ch:catalogues}). It is the first such catalogue to contain time windows, and could be used for stacking analyses of e.g gamma-ray emission.
+Applying these criteria gives a tailored search window for each TDE. Obscured TDEs instead had a search window extending from 300 days before peak to 100 days after peak, to account for potential delay following neutrino emission. The search window for each source is provided in Appendix Chapter \ref{ch:catalogues}. It is the first such catalogue to contain time windows, and could also be used for stacking analyses of e.g gamma-ray emission.
 
 \subsection{Analysis and Results}
 
-As outlined in Chapter \ref{ch:llh}, a standard \emph{stacking analysis} requires an additional assumption on the expected relative neutrino emission of each source in a catalogue. However, these TDE catalogues are characterised by small numbers of heterogeneous sources. With a mix of multi-wavelength coverage and cadences, there is no obvious proxy for neutrino emission. A common standard-candle approximation, in which each source has the same intrinsic luminosity, is also not well-motivated. There is no evidence of standard-candle behaviour in EM wavelengths, so there is no reason to think it would hold for neutrino emission. We are left with no clear method to compare the relative contributions, and for this reason, an agnostic approach is instead applied. Using the method outlined in Section \ref{sec:fit_weights}, we fit the contribution of each source in the catalogue individually, requiring only that they share a common neutrino spectrum.
+As outlined in Chapter \ref{ch:llh}, a standard \emph{stacking analysis} requires an additional assumption on the expected relative neutrino emission of each source in a catalogue. However, these TDE catalogues are characterised by small numbers of heterogeneous sources. With a mix of observation cadences and multi-wavelength coverage, there is no obvious proxy for neutrino emission. A common standard-candle approximation, in which each source has the same intrinsic luminosity, is also not well-motivated. There is no evidence of standard-candle behaviour in EM wavelengths, so there is no reason to think it would hold for neutrino emission. We are left with no clear method to compare the relative contributions, and for this reason, an agnostic approach is instead applied. Using the method outlined in Section \ref{sec:fit_weights}, we fit the contribution of each source in the catalogue individually, requiring only that they share a common neutrino spectrum.
 
 Following the procedure in Chapter \ref{ch:llh}, we perform an unbinned likelihood analysis to obtain results for each catalogue, with fit parameters TS, $\gamma$ and a number of signal events for each source ($n_{k}$). We also obtain a final Test Statistic (TS) value, and calculate a p-value for this TS using pseudotrials. Table \ref{tab:stacking_tests} summarises the results for each catalogue, including $n_{s} = \sum n_{k}$. The individual $n_{k}$ values are provided in the Appendix Chapter \ref{ch:catalogues}.
 
-\begin{table*}[]
+\begin{table}[]
 	\centering
 	\begin{tabular}{||c c c| c c c | c||} 
 		\hline
-		Catalogue & Source Class & Size & $n_{s}$  & $\gamma$ & TS & Pre-trial p-value\\ [0.5ex] 
+		Catalogue & Source Class & Size & $n_{s}$  & $\gamma$ & TS & Pre-trial p-value\\
 		\hline\hline
-		Jetted & Jetted TDEs &  3 & 1.5& 4.0&0.8&0.40\\ 
+		Jetted & Jetted &  3 & 1.5& 4.0&0.8&0.40\\ 
 		\hline
-		Golden & Non-Jetted TDEs & 13 &3.9&2.4& 2.4&1.00\\
+		Golden & Non-Jetted & 13 &3.9&2.4& 2.4&1.00\\
 		\hline
-		Silver & Non-Jetted TDEs & 24 &15.6&2.7&7.9 & 1.00\\
+		Silver & Non-Jetted & 24 &15.6&2.7&7.9 & 1.00\\
 		\hline
-		Obscured & Non-Jetted TDEs & 13 &29.4&2.8&14.8& 0.04\\[1ex] 
+		Obscured & Non-Jetted & 13 &29.4&2.8&14.8& 0.04\\[1ex] 
 		\hline
 	\end{tabular}
 	\caption{Summary of results for the four TDE catalogues. For each, an independent stacking analysis was performed. The catalogues covered sources from May 2008 to October 2017, matching the IceCube data-taking period.}
 	\label{tab:stacking_tests}
-\end{table*}{}
+\end{table}{}
 
-There was no significant correlation identified for any of the catalogues. While the Obscured TDE catalogue yielded the most significant pre-trial p-value, after trial correction using Equation \ref{eq:trial_correction} this reduces to $p_{\textup{post-trial}}$=0.15, and is thus entirely consistent with background expectations. No discovery of neutrino emission from TDEs is claimed, and \emph{we do not reject the null hypothesis that TDEs and neutrinos are uncorrelated}.
+There was no significant correlation identified for any of the catalogues. While the Obscured TDE catalogue yielded the most significant pre-trial p-value, after trial correction using Equation \ref{eq:trial_correction} this is reduced to a value of $p_{\textup{post-trial}}$=0.15, and is thus entirely consistent with background expectations. No discovery of neutrino emission from TDEs is claimed, and \emph{we do not reject the null hypothesis that TDEs and neutrinos are uncorrelated}.
 
 \subsection{Catalogue limits}
 
@@ -128,11 +128,11 @@ Being unable to reject the null hypothesis, we can instead set an upper limit on
 
 While our search results in Table \ref{tab:stacking_tests} are agnostic to the relative neutrino contribution of each source, any pseudoexperiments involving simulated signal must make an assumption regarding the intrinsic neutrino luminosity of each source. Though it remains a poor approximation for EM emission, we inject neutrinos under \emph{the assumption that each catalogue source emits the same number of neutrinos according to the same intrinsic energy spectrum}, i.e that TDEs are neutrino standard candles. The corresponding flux on Earth is thus proportional to the inverse distance squared of each source. This flux is injected uniformly across the search windows for each source, as defined in Appendix (Chapter \ref{ch:catalogues}). To conserve energy, and the flux-per-source is then inversely proportional to the length of the search window. 
 
-The intrinsic energies are presented as \emph{isotropic-equivalent}, and thus quoted assuming that the emission is emitted isotropically. This is of particular relevance for the Jetted TDEs, for which emission is likely to be highly beamed, and the energy would then be scaled accordingly. All limits derived below are only valid in the case that all of these assumptions are true. Upper limits are derived under the \emph{assumption of an unbroken neutrino power law, between 100 GeV and 10 PeV}, for a variety of spectral limits. These upper limits are shown in Figure \ref{fig:cat_upper_limit}, for both the catalogue fluence (left y axis) and the corresponding energy per source (right y axis). 
+The intrinsic energies are presented as \emph{isotropic-equivalent}, and thus quoted assuming that the emission is emitted isotropically. This is of particular relevance for the Jetted TDEs, for which emission is likely to be highly beamed, and the energy would then be scaled accordingly. All limits derived below are only valid in the case that all of these assumptions are true. Upper limits are derived for combined neutrino+anti-neutrino emission under the \emph{assumption of an unbroken neutrino power law, between 100 GeV and 10 PeV}, for a variety of spectral limits. These upper limits are shown in Figure \ref{fig:cat_upper_limit}, for both the catalogue fluence (left y axis) and the corresponding energy per source (right y axis). 
 
 \begin{figure}[!ht]
 	\centering \includegraphics{results/catalogue_limits}
-	\caption{Limits on the neutrino source energy for each catalogue.}
+	\caption{Limits on the neutrino emission for each catalogue.}
 	\label{fig:cat_upper_limit}
 \end{figure}
 
@@ -140,7 +140,7 @@ The intrinsic energies are presented as \emph{isotropic-equivalent}, and thus qu
 
 While the limits presented above constrain the contribution of those catalogues tested, we ultimately wish to constrain neutrino emission for the TDE population as a whole. If we \emph{assume that catalogue sources are representative of the broader population}, we can extrapolate from our per-source standard candle limits in Figure \ref{fig:cat_upper_limit} to the population flux. We seek to constrain the flux of two populations, namely jetted and non-jetted TDEs. For the latter case, we rely on the results of the golden TDE catalogue, since the extrapolation \emph{implicitly requires that the catalogues are not contaminated by misclassified objects}.
 
-Using the most recent IceCube global fit of the astrophysical neutrino flux \sidecite{ic_global_fit_15}, with a best-fit spectrum of $E^{-2.50}$, we follow the procedure outline in Chapter \ref{ch:neutrino_cosmology}. We combine the golden TDE per-source limit shown in Figure \ref{fig:cat_upper_limit}, with a central local rate of $8 \times 10^{-7}$ Mpc$^{-3}$ year$^{-1}$ \sidecite{2018ApJ...852...72V} and a TDE source evolution derived by \cite{Sun:2015bda}. We constrain the contribution of non-jetted TDEs to be less than 26\% of the total. For jetted TDEs, under the assumption that they follow the same underlying source evolution as non-jetted TDEs with a central rate of $3 \times 10^{-11}$ Mpc$^{-3}$ year$^{-1}$ \sidecite{Sun:2015bda}, we find that they must contribute less than 1\% of the total.  These constraints are illustrated in Figure \ref{fig:DiffuseFlux}. 
+Using the most recent IceCube global fit of the astrophysical neutrino flux \sidecite{ic_global_fit_15}, with a best-fit spectrum of $E^{-2.50}$, we follow the procedure outline in Chapter \ref{ch:neutrino_cosmology}. We combine the golden TDE per-source limit shown in Figure \ref{fig:cat_upper_limit}, with a central local rate of $8 \times 10^{-7}$ Mpc$^{-3}$ year$^{-1}$ \sidecite{2018ApJ...852...72V} and a TDE source evolution derived by \cite{Sun:2015bda}. We constrain the contribution of non-jetted TDEs to be less than 25.3\% of the total. For jetted TDEs, under the assumption that they follow the same underlying source evolution as non-jetted TDEs with a central rate of $3 \times 10^{-11}$ Mpc$^{-3}$ year$^{-1}$ \sidecite{Sun:2015bda}, we find that they must contribute less than 1.3\% of the total.  These constraints are illustrated in Figure \ref{fig:DiffuseFlux}. 
 
 \begin{figure}[!ht]
 	\centering \includegraphics{results/tde_limits}
@@ -148,15 +148,19 @@ Using the most recent IceCube global fit of the astrophysical neutrino flux \sid
 	\label{fig:DiffuseFlux}
 \end{figure}
 
-As the contribution from a population is directly proportional to the local population rate, the shaded bands indicate the uncertainty in our limits arising from rate estimates. For TDEs, these rates are the dominant source of uncertainty in neutrino flux. It will require systematic evaluation of observed TDE rates to enable more precise limits on neutrino emission. Any refined rate estimate can be used to linearly rescale these limits. Propagating through the current local rate uncertainty, we constrain non-jetted TDEs to be less than 13-39\%, and jetted TDEs to be less than 0.n-1.n\% of the total. With a more precise future measurement of the local TDE rate, these values can be linearly rescaled to provide more accurate limits.
+As the contribution from a population is directly proportional to the local population rate, the shaded bands indicate the uncertainty in our limits arising from rate estimates. For TDEs, these rates are a large source of uncertainty in neutrino flux. It will require systematic evaluation of observed TDE rates to enable more precise limits on neutrino emission. Any refined rate estimate can be used to linearly rescale these limits. Propagating through the current local rate uncertainty, we constrain non-jetted TDEs to be less than 12.7\% - 38.0\%, and jetted TDEs to be less than 0.4\% - 3.0\% of the total. With a more precise future measurement of the local TDE rate, these values can be linearly rescaled to provide more accurate limits.
 
-Such limits also critically depend on the source evolution of TDEs as a function of redshift, but this is essentially unconstrained observationally because TDEs detections are overwhelmingly confined to the local universe (z $\lesssim$ 0.3). Estimates are made primarily based on theoretical predictions derived from the rate of supermassive black holes (see Chapter \ref{ch:neutrino_cosmology}) \cite{Sun:2015bda}. If we instead consider a source evolution similar to the Star Formation Rate (SFR), we would find limits of x and y \% respectively. For such a scenario, the contribution of unresolved TDEs is so large that the measured flux itself provides a stricter constraint than the catalogue test?
+Such limits also critically depend on the source evolution of TDEs as a function of redshift, but this is not strongly constrained observationally because TDEs detections are generally confined to the local universe (z $\lesssim$ 0.3). Estimates are made primarily based on theoretical predictions derived from the rate of supermassive black holes (see Chapter \ref{ch:neutrino_cosmology}) \cite{Sun:2015bda}. If we instead consider a source evolution similar to the Star Formation Rate (SFR), we would find limits of 108.3\% (54.2\% - 162.5\%) and 5.5 \% (1.8\% - 12.8\%) respectively. For such a scenario, the contribution of unresolved non-jetted TDEs is so large that the measured flux itself provides a stricter constraint than the catalogue test. However, even in that extreme scenario, the contribution of jetted TDEs to the diffuse neutrino flux remains subdominant.
+
+\begin{figure}[!ht]
+	\centering \includegraphics{results/tde_limits_sfr}
+	\caption{Limits on the contribution of jetted and non-jetted TDEs to the diffuse neutrino flux, under the assumption of a source evolution proportional to the Star Formation Rate.}
+	\label{fig:DiffuseFluxSRF}
+\end{figure}
 
 \subsection{Individual TDEs}
 
-In addition, four TDEs were selected for individual analysis. Two of the three jetted TDEs, Swift J1644+57 and Swift J2058+05, were chosen due to their luminosity, as well as their position in the northern hemisphere where IceCube has the highest effective area. In addition, ASSASN-14li and  XMMSL1 J0740-85 were chosen as non-jetted TDEs which were both nearby and bright. These four TDEs were the only catalogue sources that were also detected in radio observations, typically a tracer for relativistic particle acceleration.
-
-For each of the four individual TDEs, searches were conducted for neutrino clustering in both time and space, following the procedure outlined in Section \ref{sec:cluster_algorithm}. All single-object tests are described in Table \ref{tab:single_tests}
+In addition to the stacking analysis, four TDEs were selected for individual analysis. Two of the three jetted TDEs, Swift J1644+57 and Swift J2058+05, were chosen due to their luminosity, as well as their position in the northern hemisphere where IceCube has the highest effective area. In addition, ASSASN-14li and  XMMSL1 J0740-85 were chosen as non-jetted TDEs which were both nearby and bright. These four TDEs were the only catalogue sources that were also detected in radio observations, typically a tracer for relativistic particle acceleration. For each of the four individual TDEs, searches were conducted for neutrino clustering in both time and space, following the procedure outlined in Section \ref{sec:cluster_algorithm}. All single-object tests are described in Table \ref{tab:single_tests}.
 
 \begin{table*}[]
 	\centering
