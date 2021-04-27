@@ -61,6 +61,8 @@ The IceCube detector is characterised by extremely high uptime of >99\%, divided
 
 The atmospheric background rates depend on atmospheric densities which are ultimately temperature-dependent, leading to seasonal variations and clearly-visible annual cycles. This variation is itself an area of scientific interest, being exploited to measure climate variations with neutrinos \sidecite{seasonal_neutrinos}. These effects are partially mitigated in data-based models by the standard method of shuffling measured neutrino arrival times rather than drawing them from a PDF. In any case, the arrival time anisotropy is a small one.
 
+Given this, we can approximate the background time PDF as uniform over periods of detector operation, with normalisation:
+
 \begin{equation}
 \mathcal{B}_{\textup{time}} \approx \frac{1}{\textup{livetime}}
 \end{equation}
@@ -135,7 +137,7 @@ Having factorised the declination dependence of events in equation \ref{eq:b_the
 In contrast to the strong declination dependence, Figure \ref{fig:az_vs_energy} shows that there is a no azimuthal dependence for events in the northern hemisphere, and negligible variation in the southern hemisphere. We can thus construct simple two-dimensional background energy PDFs using the distribution shown in Figure \ref{fig:dec_vs_energy}:
 
 \begin{equation}
-\mathcal{B}_{\textup{E}} (\delta, E_{\textup{proxy}}) = f_{\textup{E}}(E_{p}, \delta)
+\mathcal{B}_{\textup{E}} (\delta, E_{\textup{proxy}}) = f_{\textup{E}}(E_{\textup{proxy}}, \delta)
 \label{eq:b_energy}
 \end{equation}
 
@@ -159,9 +161,9 @@ In IceCube, it is common to test hypotheses in which the the number of signal ne
 
 \subsection*{Signal Time PDF}
 
-In almost all IceCube analyses, the signal time PDF is assumed to be a uniform distribution over a fixed period of livetime. This could be for the entire duration of a dataset, corresponding to a steady neutrino source. This special case is typically referred to as a \emph{time-integrated analysis}, because it cancels out exactly the assumed background time PDF, yielding a likelihood that does not depend on time. This thesis is concerned with \emph{transient} sources, which are only active over fixed periods of time.  Transient source hypotheses require a \emph{time-dependent analysis}, in which the signal is assumed to occur over a shorter period, $T_{0}$ - $T_{1}$, than the full data-taking duration.
+In almost all IceCube analyses, the signal time PDF is assumed to be a uniform distribution over a fixed period of livetime. This could be for the entire duration of a dataset, corresponding to a steady neutrino source. This special case is typically referred to as a \emph{time-integrated analysis}, because it cancels out exactly the assumed background time PDF, yielding a likelihood that does not depend on time. This thesis is concerned with \emph{transient} sources, which are only active over fixed periods of time.  Transient source hypotheses require a \emph{time-dependent analysis}, in which the signal is not assumed to be uniform over the full data-taking duration.
 
-The uptime of the detector can be characterised by a boolean detector response function, $f_{\textup{uptime}}(t)$, that is either on (1) or off (0). The signal time PDF is then a product of the underlying source PDF and this detector response PDF. The signal PDF is normalised over the livetime, $\Delta_{T}$, between $T_{0}$ and $T_{1}$.
+The uptime of the detector can be characterised by a boolean detector response function, $f_{\textup{uptime}}(t)$, that is either on (1) or off (0). The signal time PDF is then a product of the underlying source PDF and this detector response PDF. For this thesis, the only relevant transient time PDF was a simple \emph{box model}. This is a uniform signal normalised over the livetime, $\Delta_{T}$, between start time $T_{0}$ and end time $T_{1}$:
 
 \begin{equation}
 \Delta_{T} = \int_{T_{0}}^{T_{1}}f_{\textup{uptime}}(t) dt
@@ -171,7 +173,7 @@ The uptime of the detector can be characterised by a boolean detector response f
 \mathcal{S}_{\textup{time}} (t)= 
 \begin{cases}
 	f_{\textup{uptime}}(t) \times \frac{1}{\Delta_{T}} & T_{0} < t < T_{1}\\
-	0 & otherwise\\
+	0 & \textup{otherwise}\\
 \end{cases}
 \end{equation}
 
@@ -229,7 +231,7 @@ TS (\mathcal{H_{i}}) = 2 \log \left( \frac{\mathcal{L}(x | \mathcal{H_{i}})}{\ma
 
 The primary motivation for using this test statistic definition comes from the \emph{Neyman-Pearson Lemma} \sidecite{1933RSPTA.231..289N}, which states that the likelihood ratio test is the most powerful possible statistical test. 
 
-While this TS definition can be used for a likelihood that is evaluated for discrete regions of parameter space (a \emph{Binned likelihood analysis}), it has long been customary in IceCube for the likelhood to be evaulated in a continuous event-wise fashion (an \emph{Unbinned likelihood analysis}) \sidecite{braun_ps_methods}. A likelihood is constructed, and evaluated for each jth individual event, with the overall likelihood given by the product of these N independent events:
+While this TS definition could be used for a likelihood that is evaluated for discrete regions of parameter space (a \emph{Binned likelihood analysis}), it has long been customary in IceCube to instead evaulate the likelihood in a continuous event-wise fashion (an \emph{Unbinned likelihood analysis}) \sidecite{braun_ps_methods}. A likelihood is constructed, and evaluated for each jth individual event, with the overall likelihood given by the product of these N independent events:
 
 \begin{equation}
 	\mathcal{L} = \prod_{i}^{N} \mathcal{L}_{i}
@@ -281,11 +283,11 @@ Defining what constitutes an independent trial can be difficult. It is a common 
 \section{Sensitivities, Discovery Potentials and Upper Limits}
 \label{sec:sens_uls}
 
-When developing and performing statistical analysis, we often wish to quantify how powerful a particular test is. As an extension of the background pseudo-experiments outlined in Section \ref{sec:pvalues}, we can also perform pseudo-experiments with our signal hypothesis, yielding a signal TS distribution. This distribution, and all conclusions derived from it, again introduce an assumption \emph{that the baseline MC can be used to represent signal}. 
+When developing and performing statistical analysis, we often wish to quantify how powerful a particular test is. As an extension of the background pseudo-experiments outlined in Section \ref{sec:pvalues}, we can also perform pseudo-experiments with our signal hypothesis. This is done through the process of \emph{signal injection}, whereby a pseudo-dataset is constructed using a combination of the background model and a signal model. The resulting TS distribution, and all conclusions derived from it, again introduce an assumption \emph{that the baseline MC can be used to represent signal}. 
 
 With a signal TS distribution, we can characterise the power of our test by assessing the degree to which the signal TS distribution differs from the background one. For a given p-value threshold, as defined by the background model, we can calculate how frequently a given signal hypothesis would lead to a rejection of the null hypothesis. This yields the Type II error rate for any test.
 
-The principle can be extended to cover multiple hypotheses. In the case of neutrino astronomy, a signal hypothesis can be defined for any number of signal neutrinos, $n_{\textup{inj}}$, that are \emph{injected} on top of the background model. Since the detection of signal neutrinos is a random process, the number of neutrinos can be simulated with a poisson process of mean $n_{\textup{exp}}$. We can thus parameterise a continuous set of signal hypotheses as a function of $n_{\textup{exp}}$, under the assumption of a given spectral model. 
+The principle can be extended to cover multiple hypotheses. In the case of neutrino astronomy, a signal hypothesis can be defined for any number of signal neutrinos, $n_{\textup{inj}}$, that are injected. Since the detection of neutrinos is a random process, the number of signal neutrinos can be simulated with a poisson process of mean $n_{\textup{exp}}$. We can thus parameterise a continuous set of signal hypotheses as a function of $n_{\textup{exp}}$, under the assumption of a given spectral model. 
 
 \begin{marginfigure}
 	\centering \includegraphics{llh/sig_ts}
@@ -317,7 +319,7 @@ Another common metric is the \emph{median 5$\sigma$ discovery potential}. This i
 	\label{fig:sens_spatial}
 \end{marginfigure}
 
-An example of the sensitivity is shown in Figure \ref{fig:sens}, using the background median threshold (TS=0.0)  from the distribution in Figure \ref{fig:bkg_ts}. For comparison, the spatial-only sensitivity is shown in Figure \ref{fig:sens_spatial}, relative to the corresponding background median distribution (TS=0.0) in Figure \ref{fig:bkg_spatial_ts}. While the standard Point Source Likelihood (Equation \ref{eq:ps_llh}) has a sensitivity of $\approx$ 3 signal neutrinos, the spatial-only likelihood has a sensitivity of $\approx$ 4 signal neutrinos. The latter method thus requires $\approx$ 33\% more signal to produce a likely detection, illustrating the enhanced power of the Point Source Likelihood as a statistical test. The discrepancy is even more extreme for discovery potential, with the standard method requiring $\approx$ 10 neutrinos (Figure \ref{fig:disc}) whereas the spatial-only method requires $\approx$ 18 neutrinos (Figure \ref{fig:disc_spatial}).
+An example of the sensitivity is shown in Figure \ref{fig:sens}, using the background median threshold (TS=0.0)  from the distribution in Figure \ref{fig:bkg_ts}. For comparison, the spatial-only sensitivity is shown in Figure \ref{fig:sens_spatial}, relative to the corresponding background median distribution (TS=0.0) in Figure \ref{fig:bkg_spatial_ts}. While the standard Point Source Likelihood (Equation \ref{eq:ps_llh}) has a sensitivity of $\approx$ 3 signal neutrinos, the spatial-only likelihood has a sensitivity of $\approx$ 4 signal neutrinos. The latter method thus requires $\approx$ 33\% more signal to produce a `likely detection', illustrating the enhanced power of the energy-dependent Point Source Likelihood as a statistical test. The discrepancy is even more extreme for discovery potential, with the standard method requiring $\approx$ 10 neutrinos (Figure \ref{fig:disc}) whereas the spatial-only method requires $\approx$ 18 neutrinos (using the extrapolation in Figure \ref{fig:disc_spatial}). 
 
 \begin{marginfigure}
 	\centering \includegraphics{llh/bkg_ts_disc}
@@ -331,9 +333,9 @@ An example of the sensitivity is shown in Figure \ref{fig:sens}, using the backg
 	\label{fig:disc_spatial}
 \end{marginfigure}
 
-These metrics allow us quantify the performance of a test without requiring knowledge of the actual outcome of the test on real data. By comparing the two cases outlined above, it clear that we should use the Point Source Likelihood with an energy term. In this way, an analysis can be designed that is \emph{blind}, and thus free from human bias. We optimise our analysis in terms of achieving the best possible sensitivity or discovery potential, and only then do we perform the test on real data. 
+These metrics allow us quantify the performance of a test without requiring knowledge of the actual outcome of the test on real data. In this way, an analysis can be designed that is \emph{blind}, and thus free from human bias. We optimise our analysis in terms of achieving the best possible sensitivity or discovery potential, and only then do we perform the test on real data. Applying this principle to the two cases outlined above, it clear that we should use the Point Source Likelihood with an energy term, and this conclusion has been reached without knowledge of the ultimate outcome of either test on the real dataset. 
 
-Once the analysis has been \emph{unblinded}, we can also recycle these pseudo-experiements to set an upper limit. Following exactly the same procedure as for sensitivity, we can derive an upper limit at some confidence level, typically 90\%, using the observed TS value and our pseudo-experients with added signal. Our upper limit is defined as the signal expectation for which 90\% of the pseudo-experiements would yield a TS greater than or equal to the value observed. By construction, for a median experimental result of the background hypothesis, the upper limit derived at 90\% confidence level is exactly equal to the sensitivity. Conventionally, in IceCube, for results which yield an underfluctuation relative to background expectations (a TS value less than the median), the sensitivity is quoted as an upper limit.
+Once the analysis has been \emph{unblinded}, we can also recycle these pseudo-experiments to set an upper limit. Following exactly the same procedure as for sensitivity, we can derive an upper limit at some confidence level, typically 90\%, using the observed TS value and our pseudo-experiments with added signal. Our upper limit is defined as the signal expectation for which 90\% of the pseudo-experiments would yield a TS greater than or equal to the value observed. By construction, for a median experimental result of the background hypothesis, the upper limit derived at 90\% confidence level is exactly equal to the sensitivity. Conventionally, in IceCube, for results which yield an underfluctuation relative to background expectations (a TS value less than the median), the sensitivity is quoted as an upper limit.
 
 Both sensitivity and discovery potential can be used to characterise and compare the relative power of statistics tests, in terms of signal events. However, through use of the effective area,  $A_{\textup{eff}} (\delta)$, we can convert these values of $n_{\textup{exp}}$ into corresponding values of muon neutrino flux normalisation.
 
@@ -352,7 +354,7 @@ The effective area as a function of declination, $A_{\textup{eff}} (\delta)$, is
 	\label{fig:effective_area}
 \end{figure}
 
-With Equation \ref{eq:n_exp}, we can then characterise the properties of astrophysical neutrino sources for which we could expect a discovery, and conversely we can constrain these properties for a null result. This is illustrated in Figure \ref{fig:10yr_ps}, illustrating the sensitivity and 5$\sigma$ discovery potential for a point source at various declinations. The values are derived using the full Point Source Likelihood introduced in Equation \ref{eq:ps_llh}, inclusind an energy term. As expected from Figure \ref{fig:effective_area}, the detector is most sensitive at the horizon but gradually deteriorates at more northern declinations due to increasing Earth absorption. Below the horizon, the sensitivity rapidly deteriorates due to the higher muon background.
+With Equation \ref{eq:n_exp}, we can then characterise the properties of astrophysical neutrino sources for which we could expect a discovery, and conversely we can constrain these properties for a null result. This is illustrated in Figure \ref{fig:10yr_ps}, illustrating the sensitivity and 5$\sigma$ discovery potential for a point source at various declinations. The values are derived using the full Point Source Likelihood introduced in Equation \ref{eq:ps_llh}, including an energy term. As expected from Figure \ref{fig:effective_area}, the detector is most sensitive at the horizon but gradually deteriorates at more northern declinations due to increasing Earth absorption. Below the horizon, the sensitivity rapidly deteriorates due to the higher muon background.
 
 \begin{figure}[!ht]
 	\centering \includegraphics{llh/10_yr_PS}
@@ -453,7 +455,7 @@ One possible modification to the likelihood outlined above is to search for neut
 
 Multiple box time PDFs are tested for a given source, and the one with the highest TS value is selected. Flares have both a start point, $T_{0}$, and end point, $T_{1}$, yielding two additional fit parameters. However, the likelihood landscape has discontinuities from when single neutrinos passing in/out boundary of the time PDF. Therefore, to avoid issues with minimisation by gradient descent, in  \flarestack{} the optimal flare is selected through a brute-force minimisation procedure. Though $T_{0}$ and $T_{1}$ are in principle continuous variables, the most significant possible cluster will always be one that begins and ends with the detection of a neutrino.
 
-However, for N neutrinos in a dataset, there are $N \times (N-1)/2$ possible pairs to test. To further speed computation, a simplifying assumption is made that \emph{the most significant cluster will begin and and with signal-like neutrinos}. The $\mathcal{S}/\mathcal{B}$ ratio is calculated for all neutrinos, and only those with $\mathcal{S} > \mathcal{B}$ are considered sufficiently signal-like to test. This procedure is illustrated in Figure \ref{fig:time}.
+However, for N neutrinos in a dataset, there are $N \times (N-1)/2$ possible pairs to test. To further speed computation, a simplifying assumption is made that \emph{the most significant cluster will begin and end with signal-like neutrinos}. The $\mathcal{S}/\mathcal{B}$ ratio is calculated for all neutrinos, and only those with $\mathcal{S} > \mathcal{B}$ are considered sufficiently signal-like to test. This procedure is illustrated in Figure \ref{fig:time}.
 
 \begin{marginfigure}
 	\centering \includegraphics{llh/time}
@@ -489,7 +491,7 @@ An example of this cluster search, as used for the source AT2018cow (see Chapter
 The direct implementation of a well-defined $\mathcal{S}$ for a stacking analysis is the most powerful possible test, \emph{under the assumption that the relative distribution of the signal is known}. This condition can be satisfied when a specific model is tested that accurately predicts the relative number of signal events produced by each source in an ensemble. A prediction using multi-wavelength emission as a proxy, or expectations for a population of neutrino standard candles, are common assumptions. However, in an agnostic search for neutrino emission from a source ensemble, the uncertainty of our knowledge should be ideally implemented through priors on our expectations of neutrino emission from each source. The standard \emph{Point Source Likelihood} can be thought of as one extreme with maximum knowledge yielding $\delta$-function priors for the neutrino emission from each source. The other extreme is one of maximum ignorance, in which flat priors $n_{s, k}$ for each kth source is allowed to vary completely independently. In that case, we can replace the point-source likelihood (Equation \ref{eq:ps_llh}) with the \emph{multi-source likelihood}:
 
 \begin{equation}
-	\mathcal{L}(n_{s}, \gamma) = \prod_{j}^{N} \left(\sum_{k} \left[ \frac{n_{s, k}}{N} \mathcal{S}_{k}(\theta_{j}, \gamma) \right]+ \frac{N - \sum_{k} \left[ n_{s, k} \right] }{N} \mathcal{B}(\theta_{j})  \right)
+	\mathcal{L}(\vec{n_{s}}, \gamma) = \prod_{j}^{N} \left(\sum_{k} \left[ \frac{n_{s, k}}{N} \mathcal{S}_{k}(\theta_{j}, \gamma) \right]+ \frac{N - \sum_{k} \left[ n_{s, k} \right] }{N} \mathcal{B}(\theta_{j})  \right)
 \end{equation}
 
 This approach is commonly referred to as \emph{fitting the weights} of each source, in contrast to the standard method of \emph{fixed source weights}. Additional flexibility comes at the expense of more independent fit parameters, and thus a higher TS threshold to achieve fixed significance. In the limit of many sources, each with sub-unity neutrino expectations, the number of degrees of freedom would exceed the number of expected signal events. It is most useful for analysing a small number of sources, in which the relative neutrino distribution is not known, but for which multiple neutrinos would be expected. This likelihood is used for some results in this thesis (see Chapter \ref{ch:results}).
@@ -517,6 +519,6 @@ By dividing this through, we find:
 \label{eq:TS_reduced}
 \end{equation}
 
-Equation \ref{eq:TS_reduced}  is faster to evaluate, because it bypasses the need to calculate both signal and background energy proxy PDFs explicitly. Instead, we can precomputing the ratio $\frac{\mathcal{S}}{\mathcal{B}}$ for a variety of spectral indices, saving a per-event division calculation.
+Equation \ref{eq:TS_reduced}  is faster to evaluate, because it bypasses the need to calculate both signal and background energy proxy PDFs explicitly. Instead, we can pre-computing the ratio $\frac{\mathcal{S}}{\mathcal{B}}$ for a variety of spectral indices, saving a per-event division calculation.
 
 An additional simplifying assumption is that neutrinos are typically localised to a resolution of $\sim$1 degree, so events which lie many degrees from a source have a negligible probability of being signal. For events lying outside a \pm5 degree box, and those within a \pm5 degree box but with a spatial likelihood ratio less than $10^{-21}$, we make the approximation that $\mathcal{S} \approx 0$ so then $TS \approx 0$. Using the formulation in Equation \ref{eq:TS_reduced}, we see we can simply neglect to evaluate the likelihood for these events, without altering the final sum. This box cut thus removes the overwhelming majority of events from the likelihood evaluation step, yielding vast speed improvements while having a negligible impact on the fitting process.
