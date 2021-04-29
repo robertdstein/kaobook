@@ -13,7 +13,7 @@ All calculations were  performed using the \emph{\href{https://github.com/IceCub
 
 One novel result of this thesis is a stacking analysis of Tidal Disruption Events (TDEs) (see Chapter \ref{ch:sources}), the first such experimental search for a TDE-neutrino correlation. The details of this analysis are outlined below.
 
-\subsection{Signal Hypothesis}
+\subsection*{Signal Hypothesis}
 
 As outlined Chapter \ref{ch:sources}, theoretical modelling of neutrino emission in TDEs generally distinguishes between those with relativistic jets and those without. In recognition of this, we ultimately have two distinct hypotheses to test:
 
@@ -24,7 +24,7 @@ As outlined Chapter \ref{ch:sources}, theoretical modelling of neutrino emission
 
 The timescales predicted for neutrino emission have varied substantially. In general, neutrino emission is expected to occur close to the peak EM brightness of the flare, with durations of a few hours to $\sim$ 100 days. There are no scenarios for neutrino emission preceding disruption. 
 
-\subsection{Catalogue Compilation}
+\subsection*{Catalogue Compilation}
 
 To perform a correlation analysis, a list of sources must first be compiled. One list of TDEs is maintained by the \emph{\href{https://tde.space/}{OpenTDECatalog}} \sidecite{tde_catalog_paper}, containing relevant metadata and photometry. The database prioritises completeness by containing all objects with a possible TDE classification, even when those classifications are ambiguous \cite{tde_catalog_paper}, and will thus by construction suffer from source contamination. The database itself is maintained by volunteers, and is thus not entirely complete. For the compilation of a catalogue for this thesis, the list from the \emph{\href{https://tde.space/}{OpenTDECatalog}} was supplemented by additional objects and data from the literature.
 
@@ -78,7 +78,7 @@ All catalogues are summarised in Table \ref{tab:stacking_cat}, with full details
 	\label{tab:stacking_cat}
 \end{table*}{}
 
-\subsection{Search Windows}
+\subsection*{Search Windows}
 
 To account for the heterogeneous datasets, an individual search window was defined for each TDE, with the aim for identifying the period of peak electromagnetic emission. For jetted/gold/silver TDE, the following criteria were used:
 
@@ -97,7 +97,7 @@ To account for the heterogeneous datasets, an individual search window was defin
 
 Applying these criteria gives a tailored search window for each TDE. Obscured TDEs instead had a search window extending from 300 days before peak to 100 days after peak, to account for potential delay following neutrino emission. The search window for each source is provided in Appendix Chapter \ref{ch:catalogues}. It is the first such catalogue to contain time windows, and could also be used for stacking analyses of e.g gamma-ray emission.
 
-\subsection{Analysis and Results}
+\subsection*{Analysis and Results}
 
 As outlined in Chapter \ref{ch:llh}, a standard \emph{stacking analysis} requires an additional assumption on the expected relative neutrino emission of each source in a catalogue. However, these TDE catalogues are characterised by small numbers of heterogeneous sources. With a mix of observation cadences and multi-wavelength coverage, there is no obvious proxy for neutrino emission. A common standard-candle approximation, in which each source has the same intrinsic luminosity, is also not well-motivated. There is no evidence of standard-candle behaviour in EM wavelengths, so there is no reason to think it would hold for neutrino emission. We are left with no clear method to compare the relative contributions, and for this reason, an agnostic approach is instead applied. Using the method outlined in Section \ref{sec:fit_weights}, we fit the contribution of each source in the catalogue individually, requiring only that they share a common neutrino spectrum.
 
@@ -124,7 +124,7 @@ Following the procedure in Chapter \ref{ch:llh}, we perform an unbinned likeliho
 
 There was no significant correlation identified for any of the catalogues. While the Obscured TDE catalogue yielded the most significant pre-trial p-value, after trial correction using Equation \ref{eq:trial_correction} this is reduced to a value of $p_{\textup{post-trial}}$=0.15, and is thus entirely consistent with background expectations. No discovery of neutrino emission from TDEs is claimed, and \emph{we do not reject the null hypothesis that TDEs and neutrinos are uncorrelated}.
 
-\subsection{Catalogue limits}
+\subsection*{Catalogue limits}
 
 Being unable to reject the null hypothesis, we can instead set an upper limit on neutrino emission, by ruling out scenarios for which we would have expected to reject the null hypothesis. We follow the procedure outlined in Section \ref{sec:sens_uls} to set an upper limit, at 90\% confidence, using pseudoexperiements with simulated signal. In common with most IceCube studies, these limits are only valid \emph{under the assumption that the signal looks like the baseline IceCube MC}, and thus that \emph{the impact of all systematic effects are negligible}.
 
@@ -138,7 +138,7 @@ The intrinsic energies are presented as \emph{isotropic-equivalent}, and thus qu
 	\label{fig:cat_upper_limit}
 \end{figure}
 
-\subsection{Population limits}
+\subsection*{Population limits}
 
 While the limits presented above constrain the contribution of those catalogues tested, we ultimately wish to constrain neutrino emission for the TDE population as a whole. If we \emph{assume that catalogue sources are representative of the broader population}, we can extrapolate from our per-source standard candle limits in Figure \ref{fig:cat_upper_limit} to the population flux. We seek to constrain the flux of two populations, namely jetted and non-jetted TDEs. For the latter case, we rely on the results of the golden TDE catalogue, since the extrapolation \emph{implicitly requires that the catalogues are not contaminated by misclassified objects}.
 
@@ -176,7 +176,7 @@ With Equation \ref{eq:sfr_evolution}, we would then find limits of 108.3\% (54.2
 	\label{fig:DiffuseFluxSFR}
 \end{figure}
 
-\subsection{Individual TDEs}
+\subsection*{Individual TDEs}
 
 In addition to the stacking analysis, four TDEs were selected for individual analysis. Two of the three jetted TDEs, Swift J1644+57 and Swift J2058+05, were chosen due to their luminosity, as well as their position in the northern hemisphere where IceCube has the highest effective area. In addition, ASSASN-14li and  XMMSL1 J0740-85 were chosen as non-jetted TDEs which were both nearby and bright. These four TDEs were the only catalogue sources that were also detected in radio observations, typically a tracer for relativistic particle acceleration. For each of the four individual TDEs, searches were conducted for neutrino clustering in both time and space, following the procedure outlined in Section \ref{sec:cluster_algorithm}. All single-object tests are described in Table \ref{tab:single_tests}.
 
