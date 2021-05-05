@@ -2,10 +2,10 @@
 \setchapterpreamble[u]{\margintoc}
 \chapter{Neutrino Cosmology}
 \labch{neutrino_cosmology}
-%\begin{fquote}[ Kurt Vonnegut][The Design of Experiments][1935]The universe is a big place, perhaps the biggest.
-%\end{fquote}
-\begin{fquote}[Jocelyn Bell Burnell][Beautiful Minds][2010]The universe is very big - there's about 100,000 million galaxies in the universe, so that means an awful lot of stars.
+\begin{fquote}[ Kurt Vonnegut][The Design of Experiments][1935]The universe is a big place, perhaps the biggest.
 \end{fquote}
+%\begin{fquote}[Jocelyn Bell Burnell][Beautiful Minds][2010]The universe is very big - there's about 100,000 million galaxies in the universe, so that means an awful lot of stars.
+%\end{fquote}
 
 Often, the strictest limits on the neutrino emission of a population comes not from direct likelihood analysis, but rather from much simpler cosmological arguments. IceCube measures a diffuse astrophysical neutrino flux, setting a limit on the cumulative contribution that can come from a given population. This information can be illustrated by a \emph{Kowalski Plot}, encompassing the product of a local rate and a mean neutrino luminosity per source (see Chapter \ref{ch:sources}). 
 
@@ -293,18 +293,19 @@ We consider a number of source classes, listed in Table \ref{tab:source_properti
 	\centering
 	\begin{tabular}{||c c c c c c c|} 
 	\hline
-	Source & Max redshift & Length & Search Area & Detection Efficiency & Local Rate & Evolution \\
+	Source & Max & Length & Search & Detection & Local & Source \\
+	Class & Redshift & &  Area & Efficiency & Rate & Evolution\\
 	& [z] & [yr] & [sq. deg.] & [\%] & [Mpc$^{-3}$ yr$^{-1}$] & \\
 	\hline
-	TDE (Non-jetted) & 0.15 & 1.00 & 3.14 & 100.00 & 8e-07 & \\
-	TDE (Jetted) & 0.50 & 0.50 & 3.14 & 100.00 & 3e-11 & \\
-	SN IIP & 0.05 & 0.30 & 3.14 & 100.00 & 5.3e-05 & \\
-	SN Ic & 0.05 & 0.03 & 3.14 & 100.00 & 1.8e-05 & \\
-	SN IIn & 0.08 & 0.30 & 3.14 & 100.00 & 6.5e-06 & \\
-	FBOT & 0.25 & 0.30 & 3.14 & 100.00 & 7e-07 & \\
-	GRB & 1.00 & 0.00 & 314.16 & 100.00 & 4.2e-10 & \\
-	FRB (complete) & 1.00 & 0.00 & 3.14 & 100.00 & 0.072 & \\
-	FRB (0.1\%) & 1.00 & 0.00 & 3.14 & 0.10 & 0.072 & \\
+	TDE (Non-jetted) & 0.15 & 1.00 & 3.14 & 100.00 & 8e-07 & TDE \cite{Sun:2015bda}\\
+	TDE (Jetted) & 0.50 & 0.50 & 3.14 & 100.00 & 3e-11 & TDE \cite{Sun:2015bda}\\
+	SN IIP & 0.05 & 0.30 & 3.14 & 100.00 & 5.3e-05 & SFR \cite{sfr_madau_14}\\
+	SN Ic & 0.05 & 0.03 & 3.14 & 100.00 & 1.8e-05 & SFR \cite{sfr_madau_14}\\
+	SN IIn & 0.08 & 0.30 & 3.14 & 100.00 & 6.5e-06 & SFR \cite{sfr_madau_14}\\
+	FBOT & 0.25 & 0.30 & 3.14 & 100.00 & 7e-07 & SFR \cite{sfr_madau_14}\\
+	GRB & 1.00 & 0.00 & 314.16 & 100.00 & 4.2e-10 & GRB \cite{grb_lien_14} \\
+	FRB (complete) & 1.00 & 0.00 & 3.14 & 100.00 & 0.072 & SFR \cite{sfr_madau_14}\\
+	FRB (0.1\%) & 1.00 & 0.00 & 3.14 & 0.10 & 0.072 & SFR \cite{sfr_madau_14} \\
 	\hline
 	\end{tabular}
 	\caption{Summary of assumptions on source classes.}
@@ -317,17 +318,33 @@ We consider a number of source classes, listed in Table \ref{tab:source_properti
 	\label{fig:nsig_nbkg}
 \end{figure}
 
-The intrinsic signal-to-noise of different source classes can be seen, with the white band indicating the transition from the red signal-dominated regions to the blue background-dominated regions. In general, the probability of observing a coincidence increases from lower left to upper right, while the significance of any coincidence increases from lower right to upper left. In all cases, the y axis represents the probability of observing a coincidence. For sources with $N_{\textup{bkg}} \lesssim 0.1$, where the probability of multiple background events is negligible, the x axis corresponds to the p-value for a coincidence. 
+The intrinsic signal-to-noise of different source classes can be seen, with the white band indicating the transition from the red signal-dominated regions to the blue background-dominated regions. In general, the probability of observing a coincidence increases from lower left to upper right, while the significance of any coincidence increases from lower right to upper left. In all cases, the y axis represents the probability of observing a coincidence. For sources with $N_{\textup{bkg}} \lesssim 0.1$, where the probability of multiple background events is negligible, the x axis corresponds to the p-value for a coincidence. Neutrino-specific properties of signalness and localisation will linearly scale all points in the x or y direction respectively, but the relative positions of sources remains unchanged. 
 
-Neutrino-specific properties of signalness and localisation will linearly scale all points in the x or y direction respectively, but the relative positions of sources remains unchanged. Those sources near the top/top-left of the Figure are those with the strictest existing limits, often at percent-level, while those nearer the lower/lower-right portion are only weakly constrained or could still produce the entire diffuse flux. 
+One particularly noteworthy class is FRBs, which should be particularly favourable owing to their extremely stringent temporal localisation. Indeed, were telescopes fully efficient at detecting these across the sky, the limits on this class would be perhaps the most stringent of all. However, at the time of the most recent IceCube analysis, just 21 FRBs were tested against an estimated rate of $\sim$3000 per sky per day, a sample for which no constraint could be placed on the FRB population \sidecite{icrc_frb}. This is a direct consequence of the detection efficiency of FRBs, which is so low that only a tiny fraction of signal is detectable. The expected signal to background ratio for FRBs is very high, and this statement is independent of detection efficiency, so any FRB-neutrino coincidence would be very strong evidence for a physical association. However, because the probability that an FRB counterpart would be detected at all is so low at present, no coincidence is likely to be found. This more realistic scenario is also illustrated in Figure \ref{fig:nsig_nbkg}, where with a more realistic assumed detection efficiency of 0.1\% FRBs illustrates the substantial contrast to other source classes.
 
-One particularly noteworthy class is FRBs, which are particularly favourable owing to their extremely stringent temporal localisation. Indeed, were telescopes fully efficient at detecting these across the sky, the limits on this class would be perhaps the most stringent of all. However, at the time of the most recent IceCube analysis, 21 FRBs were tested against an estimated rate of $\sim$3000 per sky per day, a sample for which no constraint could be placed on the FRB population \sidecite{icrc_frb}. It is precisely because the detection efficiency of FRBs is so low that a tiny fraction of signal is detectable. The expected signal to background ratio for FRBs is very high, and this statement is independent of detection efficiency, so any FRB-neutrino coincidence would be very strong evidence for a physical association. However, because the probability that an FRB counterpart would be detected at all is so low at present, no coincidence is likely to be found. This scenario is also illustrated in Figure \ref{fig:nsig_nbkg}, where with a more realistic assumed detection efficiency of 0.1\% FRBs are a clear outlier source class.
+We can further quantify how the expected significance would change with increasing numbers of follow-up campaigns for different possible source populations. In a real experiment, integer numbers of counterparts would be detected, for which we could then calculate the poisson probability of chance coincidence. This gives us the expected statistical significance of each Nth detection. However, the \emph{regularised lower incomplete Gamma function}, $G (y, \lambda)$, can be used to approximate a continuous poisson distribution \sidecite{incomplete_gamma}:
 
-We can further quantify how the expected significance would change with increasing numbers of follow-up campaigns for different possible source populations. This is shown in Figure \ref{fig:p_value}, unsing the same assumptions listed in Table \ref{tab:source_properties}. Though Figure \ref{fig:p_value} contains no analysis of IceCube data, it is particularly notable that the position of sources correspond very directly to the relative constraints that have been placed on those classes by IceCube. The plot illustrates how well the full unbinned likelihood analysis method used by IceCube for neutrino astronomy can in fact be approximated by a poisson counting experiment. Those source classes on the left (TDEs, GRBs, FRBs with high detection efficiency) are those most favourable for detection with realtime follow-up programs such as the one introduced in Chapters \ref{ch:realtime} and \ref{ch:ztf}. 
-The starting x position of each curve indicates how many detections would be needed before one counterpart was detected, while the y position quantifies the significance of a signal detection given the background detection rate. As a lower detection efficiency will decrease the signal detection rate,  it will be represented in Figure \ref{fig:p_value} as a shift of a curve to the right,  as can be seen for the two FRB curves. However, because the background rate is also reduced proportionately, the y axis remains unaffected. In other words, with lower detection efficiency one must do more follow up campaigns to detect N coincidence, but the significance of each Nth coincidence found is independent of detection efficiency.
+\begin{equation}
+G (y, \lambda) = \int_{\lambda}^{\infty} \frac{t^{y-1} e^{-t}}{\Gamma (y)} dt
+\label{eq:incomplete_gamma}
+\end{equation}
+
+where ${\Gamma (y)}$ is the gamma function:
+
+\begin{equation}
+\Gamma (y) = \int_{0}^{\infty} t^{y-1} e^{-t} dt
+\end{equation}
+
+Equation \ref{eq:incomplete_gamma} enables us to visualise a continuous estimate of statistical significance as a function of background rate and expected signal rate. This is shown in Figure \ref{fig:p_value}, using the same assumptions listed in Table \ref{tab:source_properties}, with the p-values converted to Gaussian $\sigma$ values. The starting x position of each curve indicates how many detections would be needed before one counterpart was detected, while the y position quantifies the statistical significance of this first signal detection given the background rate. The remainder of the curve shows how this statistical significance might be expected to evolve with time.
 
 \begin{figure}[!ht]
 	\centering \includegraphics{nu_cosmology/p_value_nfollowup}
 	\caption{Statistical significance of excess coincidence as a function of number of follow-up}
 	\label{fig:p_value}
 \end{figure}
+
+As a lower detection efficiency will decrease the signal detection rate,  it will be represented in Figure \ref{fig:p_value} as a shift of a curve to the right,  as can be seen for the two FRB curves. However, because the background rate is also reduced proportionately, the y axis remains unaffected. In other words, with lower detection efficiency one must do more follow up campaigns to detect N coincidence, but the significance of each nth coincidence found is independent of detection efficiency.
+
+It should be noted that the results presented in Figure \ref{fig:p_value} implicitly assume that each detected object is equally likely to be a neutrino counterpart, and are thus analogous to a so-called \emph{equal weighting} scenario as introduced in Equation \ref{eq:equal_weighting} of Chapter \ref{ch:llh}. However, it is typical to incorporate additional information to weight the probability for each object, for example by assuming neutrino emission will be proportional to inverse square of luminosity distance, or to flux/fluence at a particular energy band, or correlated to a particular subclass of a population. If any such additional information is used, further background discrimination will be possible, leading to higher significance sigma values. Figure \ref{fig:p_value} thus provides a lower limit on the power of any follow-up campaigns targeting a source classes with the assumptions introduced in Table \ref{tab:source_propertie}. The curves do not directly depend on the observation band of a given instrument, but the individual telescope characteristics will alter the typical detection efficiency/maximum depth. 
+
+Though Figure \ref{fig:p_value} contains no analysis of IceCube data, it is particularly notable that the position of sources correspond very directly to the relative constraints that have been placed on those classes by IceCube. Those sources near the left of the Figure are those with the strictest existing limits, often at percent-level, while those nearer the right portion are only weakly constrained or could still produce the entire diffuse flux. The plot illustrates how well the full unbinned likelihood analysis method used by IceCube for neutrino astronomy can, to first order, be approximated by a poisson counting experiment. Those source classes on the left (TDEs, GRBs, FRBs with high detection efficiency) are those most favourable for detection with realtime follow-up programs such as the one introduced in Chapters \ref{ch:realtime} and \ref{ch:ztf}. 
