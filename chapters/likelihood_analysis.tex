@@ -43,7 +43,7 @@ While the simplest hypothesis test is a binary case is which one well-defined hy
 
 For neutrino astronomy, the null hypothesis is that \emph{events are distributed according to the background model}. At the stage of defining background models, IceCube-specific physics is added to the pure mathematical basis of hypothesis testing. As outlined in Chapter \ref{ch:event_selection}, IceCube data in the northern hemisphere is dominated by the \emph{atmospheric neutrino background}, while events in the southern hemisphere are dominated by \emph{atmospheric muon bundles}, and in both hemispheres the astrophysical neutrino component is subdominant. This astrophysical neutrino flux likely consists of components from multiple source classes, so there is in principle an additional \emph{astrophysical background} for contributions not included in the signal hypothesis.
 
-It is common in IceCube to take the simplifying assumption that \emph{the data is sufficiently background-dominated to be used as a background model}. The motivation is twofold, it is firstly approximately true, but more importantly the colossal muon rate (\sim3kHz) makes it very difficult to simulate the small fraction of muons which form a signal-like background for the southern hemisphere \sidecite{icecube_detector}. In the absence of any adequate simulated model for background in the southern hemisphere, we are forced to instead use a data-based model as a null hypothesis. 
+It is common in IceCube to take the simplifying assumption that \emph{the data is sufficiently background-dominated to be used as a background model}. The motivation is twofold, it is firstly approximately true, but more importantly the colossal muon rate (\sim3kHz) makes it very difficult to simulate the small fraction of muons which form a signal-like background for the southern hemisphere \sidecite{icecube_detector_17}. In the absence of any adequate simulated model for background in the southern hemisphere, we are forced to instead use a data-based model as a null hypothesis. 
 
 The simplification has a number of drawbacks, primarily that Probability Density Functions (PDFs) derived from data are necessarily coarser because the available statistics are limited. An alternative approach, used for the sample of northern through-going muons tracks in which there is negligible atmospheric muon background, is to use Monte-Carlo based modelling to construct a model for background \sidecite{ic_diffuse_8year}. This ultimately introduces the risk of data-MC disagreement,  with uncertainties introduced for example with by atmospheric and astrophysical flux modelling. However, this is typically offset by the high-resolution PDFs which can be constructed using these much larger sample sizes.
 
@@ -96,7 +96,7 @@ Owing to IceCube's convenient location at the geographic south pole, the zenith-
 	\label{eq:b_theta}
 \end{equation}
 
-The additional azimuthal component can be seen in Figure \ref{fig:azimuth}. The detector itself (see Chapter \ref{ch:icecube}) has 6 string axes, and these are clearly visible with elevated event rates. These variations reach up to $\sim40\%$ variations for the southern hemisphere. Additionally, the impact of \emph{ice anistropy} can be seen from an event rate deficit at and below the horizon \sidecite{2019ICRC...36..854C}, aligned with the axes of maximal charge deficit at $\sim2\pi / 3$ and $5\pi / 3$. 
+The additional azimuthal component can be seen in Figure \ref{fig:azimuth}. The detector itself (see Chapter \ref{ch:icecube}) has 6 string axes, and these are clearly visible with elevated event rates. These variations reach up to $\sim40\%$ variations for the southern hemisphere. Additionally, the impact of \emph{ice anistropy} can be seen from an event rate deficit at and below the horizon \sidecite{ic_birefringence_19}, aligned with the axes of maximal charge deficit at $\sim2\pi / 3$ and $5\pi / 3$. 
 
 \begin{marginfigure}
 	\centering \includegraphics{llh/azimuth}
@@ -231,7 +231,7 @@ TS (\mathcal{H_{i}}) = 2 \log \left( \frac{\mathcal{L}(x | \mathcal{H_{i}})}{\ma
 
 The primary motivation for using this test statistic definition comes from the \emph{Neyman-Pearson Lemma} \sidecite{1933RSPTA.231..289N}, which states that the likelihood ratio test is the most powerful possible statistical test. 
 
-While this TS definition could be used for a likelihood that is evaluated for discrete regions of parameter space (a \emph{Binned likelihood analysis}), it has long been customary in IceCube to instead evaulate the likelihood in a continuous event-wise fashion (an \emph{Unbinned likelihood analysis}) \sidecite{braun_ps_methods}. A likelihood is constructed, and evaluated for each jth individual event, with the overall likelihood given by the product of these N independent events:
+While this TS definition could also be used for a likelihood that is evaluated for discrete regions of parameter space (a \emph{Binned likelihood analysis}), it has long been customary in IceCube to instead evaulate the likelihood in a continuous event-wise fashion (an \emph{Unbinned likelihood analysis}) \sidecite{braun_ps_methods}. A likelihood is constructed, and evaluated for each jth individual event, with the overall likelihood given by the product of these N independent events:
 
 \begin{equation}
 	\mathcal{L} = \prod_{i}^{N} \mathcal{L}_{i}

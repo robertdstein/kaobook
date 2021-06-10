@@ -5,67 +5,45 @@
 \begin{fquote}[William Shakespeare][Hamlet][1556] Though this be madness, yet there is method in it.
 \end{fquote}
 
-Multi-wavelength astronomy seeks to understand the universe through correlations between photons of different energies. Multi-messenger astronomy expands this concept to incorporate information from non-photon messengers, namely cosmic rays, gravitational waves and neutrinos. Each messenger provides a unique view of astrophysical processes in objects.
-
-\section{Photons}
-
-\begin{marginfigure}
-	\includegraphics{mma/multiwavelength_sky_full}
-	\caption{The sky, in galactic coordinates. From top: radio, infra-red, optical, X-ray and gamma-ray. Credit: NASA}
-	\label{fig:mwsky}
-\end{marginfigure}
-
-Photon astronomy, in particular that in optical wavelengths, is the oldest branch of astronomy. As clear in Figure \ref{fig:mwsky}, our own galaxy is the most obvious structure at all wavelengths. The different pictures of the galaxy are also noteworthy. One example is dust extinction obscuring a large portion of the optical emission (middle panel), but  which is reprocessed to yield a particularly clear infra-red image (upper middle panel). This is an illustration of one broader principle, that interpolation between different photon energies can reveal .
-
-In general, photon emission can be divided into two broad classes, \emph{thermal emission}
- and \emph{non-thermal emission}. Thermal emission is approximate black-bodies, and produces characteristic spectra. Non-thermal emission arises from particle acceleration, and is typically characterised by power-law emission. Objects can have both components. Thermal emission is typically centered in IR, optical or UV wavelengths, while non-thermal emission is typically manifested in both low energies (radio) and high-energies (hard X-rays and gamma-rays).
- 
- \subsection*{Thermal Photons}
-
- \subsection*{Non-thermal Photons}
- 
- \subsection*{Spectroscopy}
- 
-While photon observations are typically integrated over relatively-wide rsange of wavelengths, additional information can be gleaned from \emph{high-resolution spectroscopy}, in which emission in fine wavelength bins can be analysed. With precision measurements  
-
-photoelectric effect?
+\emph{Multi-wavelength astronomy} seeks to understand the universe through correlations between photons of different energies. \emph{Multi-messenger astronomy} expands this concept to incorporate information from non-photon messengers, namely \emph{cosmic rays}, \emph{gravitational waves} and \emph{neutrinos}. Each messenger provides a unique view of astrophysical processes in objects.
 
 \section{Cosmic Rays}
 
-\emph{Cosmic Rays} were first discovered by Victor Hess in 1912 \sidecite{Hess:1912srp}. The name itself is a misnomer, as they are in fact charged particles. Being charged particles, they are deflected by magnetic fields, and it is thus challenging to determine where they originate from.
+\emph{Cosmic Rays} were first discovered by Victor Hess in 1912, when the measured rate of ionising radiation was found to increase as a function of altitude, indicating the existece of an extraterrestrial flux `ioninsing rays' with a cosmic origin \sidecite{Hess:1912srp}. The name turned out to be a misnomer, beause cosmic rays are now known to actually consist of charged particle rather than rays. This has ultimately made studyinf cosmic rays more challenging, because such charged particles are deflected by the many magnetic fields in the universe. Thus, while we can now detect cosmic rays with relatively high precision, their arrival direction does not reveal much about their origin.
 
-An industry of experiments has since developed to measure the composition and spectrum of Cosmic Rays, as illustrated in Figure \ref{fig:CR_spectrum}. The data is well-described by an unbroken power-law up to $\sim$1 PeV, beyond which there is a spectral softening known as \emph{the knee}. This softer spectrum continues before undergoing a hardening, known as the \emph{ankle}. There is then evidence of a high-energy cutoff, sometimes dubbed \emph{the second knee} in a case of metaphor-stretching.
+An industry of experiments have developed since the Hess balloon expeditions to measure the composition and spectrum of Cosmic Rays, as illustrated in Figure \ref{fig:CR_spectrum}. The data is well-described by an unbroken power-law up to $\sim$1 PeV, beyond which there is a spectral softening known as \emph{the knee}. This softer spectrum continues before undergoing a hardening, known as the \emph{ankle}. There is then evidence of a high-energy cutoff, sometimes dubbed \emph{the second knee} in a case of metaphor-stretching.
 
-\begin{figure}[!ht]
-	\centering \includegraphics{mma/CRspectrum750}
-	\caption{Cosmic Ray spectrum above 100 GeV, from x (icecube).}
+\begin{figure}
+	\centering \includegraphics{mma/The_CR_Spectrum_2020}
+	\caption{Cosmic Ray spectrum above 1 GeV, from \cite{evoli_carmelo_2020_4396125}.}
 	\label{fig:CR_spectrum}
 \end{figure}
 
-The knee is typically identified as the point at which cosmic rays transition from being predominantly galactic to extragalactic, with the ankle component being fully extragalactic. The origin of the high-energy cutoff is unclear, and the corresponding flux is so low that detector arrays must be several hundred square kilometers to study this regime with high statistics. As of 2020, this is primarily studied by the \emph{Pierre Auger Detector} and \emph {Telescope Array} detector. This regime is particularly interesting, because it is the point at which the GZK... mechanism 
+The knee is typically identified as the point at which cosmic rays transition from being predominantly galactic to extragalactic, with the ankle component being fully extragalactic. The origin of the high-energy cutoff is unclear, and the corresponding flux is so low that detector arrays must be several hundred square kilometers to study this regime with high statistics. Events with energies >10$^{18}$ eV are named \emph{Ultra-high energy cosmic rays} (UHECRs), and today these UHECRs are primarily studied by the \emph{Pierre Auger Detector} and \emph {Telescope Array} detector. This UHECR regime is particularly interesting, because it is the point at which the so-called \emph{GZK mechanism} will begin to suppress the cosmic ray flux \sidecite{greisen_66, zk_66}. The GZK mechanism arises when comsic rays interact with ambient Cosmic Microwave Background (CMB) photons to produce a resonant $\Delta$ baryon:
 
-UHECRs
+In general, accelerated hadrons can interact through \emph{photohadronic} (p$\gamma$) nuclear interaction to produce pions via a resonant $\Delta$ baryon:
 
 \begin{equation}
-p + \gamma_{CMB} \rightarrow \Delta^{+} \rightarrow n + \pi^{+}
-\label{eq:GZK_pip}
-\end{equation}
-\begin{equation}
-p + \gamma_{CMB} \rightarrow \Delta^{+} \rightarrow p + \pi^{0}
-\label{eq:GZK_pi0}
+	p + \gamma \rightarrow \Delta^{+} \rightarrow n + \pi^{+}
+	\label{eq:GZK_pip}
 \end{equation}
 
-Equations \ref{eq:GZK_pip} and \ref{eq:GZK_pi0} would lead to a cutoff, in which pion production would suppress ultra-high energies above a threshold energy set by the mass of the $\Delta^{+}$ resonance. Attenuation would not occur for nearby cosmic ray sources, so the presence of such a cutoff would be evidence of an \emph{an extragalatic origin} for UHECRs. However, the \emph{Cosmic Ray Composition} determines the exact threshold for the GZK cutoff, with heavier comsic rays experiencing a much higher? threshold. There is thus much focus on understanding whether UHECRs are proton-dominated or Iron-dominated, with TA data supporting the former and PAO data supporting the latter. A joint working group concluded that these results are not in tension, once systematic uncertainties are accounted for. In summary, it appears that a definitive confirmation of a cutoff compatible with the GZK mechanism remains out of reach of present-generation instruments.
+\begin{equation}
+	p + \gamma \rightarrow \Delta^{+} \rightarrow p + \pi^{0}
+	\label{eq:GZK_pi0}
+\end{equation}
+
+The GZK mechanism is a specific case of pion production where $\gamma = \gamma_{CMB}$. Given that the CMB photon spectrum is fixed, Equations \ref{eq:GZK_pip} and \ref{eq:GZK_pi0} would lead to a cutoff, in which pion production suppresses ultra-high energies above a threshold energy set by the mass of the $\Delta^{+}$ resonance. Attenuation would not occur for nearby cosmic ray sources, so the presence of such a cutoff would be evidence of an \emph{an extragalatic origin} for UHECRs. 
+
+However, the \emph{Cosmic Ray Composition} determines the exact threshold for the GZK cutoff, with heavier cosmic rays experiencing a much higher? threshold due to their higher ????. There is thus much focus on understanding whether UHECRs are proton-dominated or include a substantial iron component. A joint working group considered the recent composition measurements of PAO and TA, and concluded that they are compatible in once systematic uncertainties are accounted for \sidecite{pa_ta_17}. In general, these results support a light (proton-dominated) composition up to $\sim$10$^{19}$ GeV, above which PAO data favours a transition to a more mixed composition \sidecite{pao_composition_17}. 
 
 An alternative explanation for any apparent cutoff is that sources of UHECRs simply cannot accelerate particles beyond certain energies due to physical constraints. In general, any cosmic ray accelerator must at a minimum satisfy the \emph{Hillas Criterion} that any particle can be contained during the acceleration process \sidecite{1984ARA&A..22..425H}. This can be calculated by equating the Lamour Radius of a particle with the physical size of an accelerator:
 
-Enu?
-
 \begin{equation}
-\frac{E_{\textup{max}}}{\textup{PeV}} \approx
-1600 \times \frac{B}{\textup{Gauss}} \times \frac{R}{10^{16} \textup{cm}} \times
-\beta Z
-\label{eq:hillas}
+	\frac{E_{\textup{max}}}{\textup{PeV}} \approx
+	1600 \times \frac{B}{\textup{Gauss}} \times \frac{R}{10^{16} \textup{cm}} \times
+	\beta Z
+	\label{eq:hillas}
 \end{equation}
 
 Equation \ref{eq:hillas} leads to a constraint on minimal magnetic field strength and source extension, which can be illustrated by a \emph{Hillas Plot} such as that in Figure \ref{fig:hillas_plot}. 
@@ -76,40 +54,92 @@ Equation \ref{eq:hillas} leads to a constraint on minimal magnetic field strengt
 	\label{fig:hillas_plot}
 \end{figure}
 
-The Hillas criterion \sidecite{1984ARA&A..22..425H} for a system of magnetic field strength $B$ and physical radius $R$ can be expressed as\cite{1984ARA&A..22..425H}:
+The Hillas criterion is a necessary but not sufficient condition for a given source class to produce cosmic rays at the specified energy. The sources must also be capable of accelerating comsic rays to the necessary energy in the first place, and the timescale for this to occur must also be shorter than the associated particle cooling timescale. 
 
-\begin{equation}
-\frac{E_{ \textup{max}}}{ \textup{PeV}} \approx
-1600 \times \frac{B}{ \textup{Gauss}} \times \frac{R}{10^{16} \,  \textup{cm}} \times
-\beta Z
-\end{equation}
-where $Z$ is the particle charge, $\beta \sim 0.2$ is the outflow velocity in units of c and $E$ is the maximum charged-particle energy. In order for particle acceleration to occur, the timescale required for particle acceleration must be shorter than the associated particle cooling timescale. Previous work has found this condition can be satisfied in TDEs for relevant energies\cite{2017ApJ...838....3S, 2017PhRvD..95l3001L}, although a detailed calculation is beyond the scope of this work.
+High-energy cosmic rays are generally though to be produced from \emph{Fermi acceleration}. Fermi acceleration is premised on the idea of `magnetic mirrors', where elastic collisions with a magnetic field leads to the deflection of a charged particle \sidecite{spurio_18}. The dominant process is thought to be \emph{First Order Fermi Acceleration}, in which acceleration occurs through repeated reflections between two magnetic fields moving closer together \sidecite{fermi_54}.
 
+. \emph{collisionless shocks}...
 
+In an idealised case... power law with E$^{-\gamma}$ spectrum.?$ \gamma \approx$ 2
 
-Fermi acceleration
+Another contributor is \emph{Second Order Fermi Acceleration}, through which particles can be accelerated through collisions against moving magnetic fields \sidecite{fermi_49}. If the trajectory of magnetic fields were distributed randomly, collisions would preferentially occur with those trajectories moving towards the particle, and in each such collision the particle would gain energy. 
 
 \section{Neutrinos}
 
-The neutrino was first proposed as a particle by Pauli in 19xx as a solution to understand the mechanics of beta decay. Though observations suggested that the process involved a three-body decay, only the charged electron and proton could be measured. Invoking the existence of a light, chargeless particle provided a theoretical escape route. However, this particle was proven to be more than a theoretical construct, with the first evidence of observation by x in y.
+The electron neutrino was first proposed as a particle by Pauli in 1930 as a solution to understand the mechanics of beta decay \sidecite{pauli_33}. Though observations suggested that the process involved a three-body decay, only the charged electron and proton could be measured. Invoking the existence of a light, chargeless particle provided a theoretical escape route:
 
-cowan reines
+\begin{equation}
+	n \rightarrow p + e^{-} + \nu_{e}
+\end{equation}
 
-DUMAND...
+ However, this particle was proven to be more than a theoretical construct, with its existence confirmed via direct detection of \emph{beta capture} in 1956 \sidecite{cowan_56}.
 
-In parallel, the \emph{Standard Solar Model} was developed in 19xx, which correctly identified that the sun was powered by nuclear fusion. This model came with a firm prediction of a guaranteed flux of electron anti-neutrinos, \emph{solar neutrinos}, which would be produced in tandem with thermal radiation. However, the first attempt to measure the solar neutrino flux, by the Homestake experiment in 196x, found a flux that was only half the predicted level. This deficit, dubbed the \emph{solar neutrino problem}, was subsequently confirmed by many other experiments.
+In parallel, the \emph{Standard Solar Model} was developed over the course of the 20th century, which correctly identified that the sun was powered by nuclear fusion \sidecite{bethe_39}. This model came with a firm prediction of a guaranteed flux of electron anti-neutrinos, \emph{solar neutrinos}, which would be produced in tandem with thermal radiation. The first attempt to measure the solar neutrino flux was by the Homestake experiment in 1964 via Cl$^{37} \rightarrow$ Ar $^{37}$, which unexpectedly detected a flux that was only one third the predicted level \sidecite{davis_68}. This deficit, dubbed the \emph{solar neutrino problem}, was subsequently confirmed by many other experiments.
 
-The solar neutrino problem was finally resolved in 200n, when the electron neutrino deficit was conclusively matched with a corresponding excess of muon neutrinos. This confirmed the presence of \emph{neutrino oscillations}, by which neutrinos can change flavour states. To undergo oscillations, neutrinos must have different non-zero mass states, in contrast to previous assumptions in the Standard Model of particle physics. 
+The solar neutrino problem was finally resolved in 2001, when the electron neutrino deficit was conclusively matched with a corresponding excess of muon neutrinos \sidecite{sno_01}. This confirmed the presence of \emph{neutrino oscillations}, by which neutrinos can change flavour states. To undergo oscillations, neutrinos must have different non-zero mass states, in contrast to previous assumptions in the Standard Model of particle physics. 
 
-A new generation of experiments have developed to probe neutrino flavour oscillations across a range of energies, baselines and channels. In general, \emph{reactor neutrinos} are used to probe electron neutrino disappearance, while solar neutrinos are used to probe muon neutrino appearance. Our current knowledge is summarised in N. Only the difference in squared masses can be probed by these experiments, so while it is known that mass states 1 and 2 have a difference of neV, and 13 $\sim$neV, the absolute ordering could be either \emph{Normal ordering} (m1<m2<m3) or \emph{inverted ordering} (m3<m1<m2). Directly measuring these masses remains a particle physics aim, with recent experiments such as KATRIN probing the sub-eV regime. IceCube has provided the first evidence of neutrino oscillations over astronomical baselines, with the detection of astrophysical tau neutrinos.
+A new generation of experiments have developed to probe neutrino flavour oscillations across a range of energies, distance baselines and detection channels. In general, \emph{reactor neutrinos} are used to probe electron neutrino disappearance, while solar neutrinos are used to probe muon neutrino appearance. Our current knowledge is summarised in N. Only the difference in squared masses can be probed by these experiments, so while it is known that mass states 1 and 2 have a difference of neV, and 13 $\sim$neV, the absolute ordering could be either \emph{Normal ordering} (m1<m2<m3) or \emph{inverted ordering} (m3<m1<m2). Directly measuring these masses remains a particle physics aim, with recent experiments such as KATRIN probing the sub-eV regime. IceCube has provided the first evidence of neutrino oscillations over astronomical baselines, with the detection of astrophysical tau neutrinos \sidecite{stachurska_thesis}.
 
-In 1987, experiments studying the solar neutrino problem unexpectedly measured a simultaneous excess in neutrinos. This detection occurred shortly before the discovery of a nearby supernova in the L? Magellanic Clouds, and coincided with the core-collapse of that supernova\sidecite{sn1987a_neutrino}. These \emph{supernova neutrinos} were the first that could be cleanly identified as arising from beyond our solar system, and confirmed the essential \emph{neutrino cooling} that is required during the stellar core collapse. This was also the first example of astronomy with multiple messengers. Only nearby galactic supernovae produce a sufficiently large flux to be clearly identified against this background. However, the predicted diffuse supernova neutrino background will soon be within reach of experiments.
+In 1987, experiments studying the solar neutrino problem unexpectedly measured a simultaneous excess in neutrinos. This detection occurred shortly before the discovery of a nearby supernova in the \emph{Large Magellanic Clouds} (nearby dwarf galaxies orbiting the Milky Way), and coincided with the core-collapse of that supernova \sidecite{sn1987a_neutrino}. These \emph{supernova neutrinos} were the first that could be cleanly identified as arising from beyond our solar system, and confirmed the essential \emph{neutrino cooling} that occurs during the stellar core collapse (see also Chapter \ref{ch:sources}). This was also the first example of astronomy with multiple messengers. Only nearby galactic supernovae produce a sufficiently large flux to be clearly identified against detector backgrounds. However, the predicted diffuse supernova neutrino background will soon be within reach of experiments.
 
-Interactions of cosmic rays with the atmosphere produce a guaranteed flux of \emph{atmospheric neutrinos}, and this was finally confirmed observationally with the AMANDA detector in 200n. This flux extends over many orders of magnitude,. It is expected that there should be a distinct second \emph{atmospheric prompt} component of neutrinos, produced via charm quark in the atmosphere. However, this component has not yet been measured.
+For this thesis, the most relevant neutrino detection method is via \emph{charged current} (CC) and \emph{neutral current} (NC) interactions of the weak force, used for neutrino telescopes such as IceCube (see Chapter \ref{ch:icecube}). CC interactions are mediated by W$^{\pm}$ bosons:
 
-\emph{Astrophysical neutrinos} are to some degree guaranteed as a byproduct of high-energy cosmic ray production, resulting via pion production from the interaction of cosmic rays with ambient matter (pp) and radiation (p$\gamma$). However, the extent of astrophysical neutrino production depends very substantially on the conditions at cosmic ray accelerators, with high fluxes requiring abundant target material for pion production. A flux of astrophysical neutrinos was first discovered by IceCube in 2013, at a level close to the maximal one. This astrophysical component begins to dominate over the atmospheric neutrinos above n TeV. No neutrino source has yet been discovered, but possible sources of these astrosphysical neutrinos are discussed further in Chapter N.
+\begin{equation}
+	\nu_{l} + \rightarrow W^{\pm} \rightarrow l^{\pm} + X
+\end{equation}
 
-At the very highest energies, it is expected that the impact of the GZK cutoff (Equations \ref{eq:GZK_pip} and \ref{eq:GZK_pi0}) should generate a flux of neutrinos through interactions of UHECRs with the cosmic microwave background. These \emph{Cosmogenic Neutrinos} have not yet been observed, but upcoming radio neutrino observatories in particular are seeking to measure them. The flux of cosmogenic neutrinos depends very strongly on the composition, density and evolution of cosmic ray sources, so it remains unclear whether it will be accessible to these detectors. (See Fig N)
+while NC interactions are instead mediated by Z bosons:
+
+\begin{equation}
+	\nu_{l} + \rightarrow Z \rightarrow \nu_{l} + X
+\end{equation}
+
+where l is a lepton family (e, $\mu$, $\tau$, N is a nucleon and X represents the daughter hadronic particles \cite{spurio_18}. Neutrinos are then detected indirectly via the electromagnetic signature associated with the lepton l or hadrons X, typically via the \emph{Cherenkov effect}. 
+
+frank tamm and cherenkov here?
+
+This detection principle is employed by km$^{3}$-scale neutrino telescopes targeting neutrinos at higher (GeV-PeV) energies. Interactions of cosmic rays with the atmosphere also produce a guaranteed flux of \emph{atmospheric neutrinos} which extend to `higher' (GeV-TeV) energies, and this was confirmed observationally with the AMANDA neutrino telescope in 2002 \sidecite{amanda_02}. This flux extends over many orders of magnitude, as can be seen in Figures \ref{fig:ic_diffuse_flux} and \ref{fig:nu_spectrum}. It is expected that there should be a distinct second component of \emph{charm} or \emph{prompt atmospheric neutrinos}, generated from the decay of charm mesons which are produced through interactions of cosmic rays with atmospheric nuclei \cite{spurio_18}. This component has not yet been measured, but remains subdominant relative to the astrophysical flux.
+
+\begin{figure}
+	\centering \includegraphics{icecube/ic_diffuse_flux}
+	\caption{The astrophysical, atmospheric and prompt neutrino fluxes, from \cite{ic_15_joint}.}
+	\label{fig:ic_diffuse_flux}
+\end{figure}
+
+\emph{Astrophysical neutrinos} are to some degree guaranteed as a byproduct of high-energy cosmic ray production, resulting via pion production from the interaction of cosmic rays with ambient matter (pp) and radiation (p$\gamma$). 
+
+pp?
+
+Charged pions introduced in Equation \ref{eq:GZK_pip} will ultimately decay to muons, generating muon neutrinos:
+
+\begin{equation}
+	\pi^{\pm} \rightarrow \nu_{\nu} + \mu^{\pm}
+\end{equation}
+
+These muons will further decay to electrons, generating two additional neutrinos:
+
+\begin{equation}
+	\pi^{\pm} \rightarrow \nu_{\mu} + \mu^{\pm} \rightarrow \nu_{\nu} + \nu_{\mu} + \nu_{e} + e^{\pm}
+\end{equation}
+
+pp?
+
+However, the extent of astrophysical neutrino production depends very substantially on the conditions at cosmic ray accelerators, with high fluxes requiring abundant target material for pion production. A flux of astrophysical neutrinos was first discovered by IceCube in 2013 \sidecite{ic_astro_13}, at a level close to the maximal one allowed by cosmic ray measurements \sidecite{waxman_bahcall_98}. As can be seen from the latest flux measurement in Figure \ref{fig:ic_diffuse_flux}, this astrophysical component begins to dominate over the atmospheric neutrinos above $\sim$100 TeV. No neutrino source class has yet been detected at the 5$\sigma$ level, but possible sources of these astrophysical neutrinos are discussed further in Chapter \ref{ch:sources}.
+
+$E^{-2}$
+
+For a photon target, with p$\gamma$ 
+
+Equation \ref{eq:GZK_pip} can be compactly rewritten as a threshold photon energy required for the neutrino production at a given energy, $E_{\nu}$:
+
+\begin{equation}
+	E_{\gamma}E_{p} \sim \Gamma ^{2} 0.16 \,  \textup{GeV}^{2}
+	\label{eq:delta_res}
+\end{equation} 
+
+where $\Gamma$ is the bulk Lorentz factor of the medium.
+
+At the very highest energies, it is expected that the impact of the GZK cutoff (Equations \ref{eq:GZK_pip} and \ref{eq:GZK_pi0}) should generate a flux of neutrinos through interactions of UHECRs with the cosmic microwave background. These \emph{Cosmogenic Neutrinos} have not yet been observed, but upcoming radio neutrino observatories in particular are seeking to measure them. The flux of cosmogenic neutrinos depends very strongly on the composition, density and evolution of cosmic ray sources, so it remains unclear whether it will be accessible to these detectors.
 
 \begin{figure}[!ht]
 	\includegraphics{mma/nu_spectrum}
@@ -123,28 +153,77 @@ At the very highest energies, it is expected that the impact of the GZK cutoff (
 	\label{fig:mm}
 \end{figure}
 
-cosmological
+\section{Photons}
 
-In all cases, neutrino production is accompanied by a flux of pionic gamma-rays. However, these can be subsequently absorbed, so neutrinos may be produced in seemingly gamma-dark sources.
+\begin{marginfigure}
+	\includegraphics{mma/multiwavelength_sky_full}
+	\caption{The sky, in galactic coordinates. From top: radio, infra-red, optical, X-ray and gamma-ray. Credit: NASA}
+	\label{fig:mwsky}
+\end{marginfigure}
 
-pp and p$\gamma$
+Photon astronomy, in particular that in optical wavelengths, is the oldest branch of astronomy. As clear in Figure \ref{fig:mwsky}, our own galaxy is the most obvious structure at all wavelengths. The different pictures of the galaxy are also noteworthy. One example is dust extinction obscuring a large portion of the optical emission (middle panel), but  which is reprocessed to yield a particularly clear infra-red image (upper middle panel). This is an illustration of one broader principle, that interpolation between different photon energies can reveal additional information about astrophysical objects.
 
-For a photon target, with p$\gamma$ pion production via the $\Delta$ resonance, we expect that neutrino production will occur above the threshold introduced in Equation:
+In general, photon emission can be divided into two broad classes, \emph{thermal emission}
+ and \emph{non-thermal emission}. Thermal emission is approximate black-bodies, and produces characteristic spectra. Non-thermal emission arises from particle acceleration, and is typically characterised by power-law emission. Objects can have both components. Thermal emission is typically centered in IR, optical or UV wavelengths, while non-thermal emission is typically manifested in both low energies (radio) and high-energies (hard X-rays and gamma-rays).
+ 
+ \subsection*{Thermal Photons}
+ 
+ \emph{Thermal photons} are those produced by \emph{blackbody radiation}, which have a characteristic form :
+ 
+ \begin{equation}
+ 	content...
+ \end{equation}
+
+where T is the temperature, R is the radius and D is the distance. Many of the astrophysical population introduced in Chapter \ref{ch:sources}, such as \emph{supernovae} or \emph{tidal disruption events} can be well described by thermal spectra. With observations in multiple bands, such as optical, IR and UV, the physical properties of a source can be inferred at different observation epochs. 
+
+Most astrophysical populations have temperatures >10$^{3}$ K and <10$^{5}$ K, meaning that a substatial fraction of the thermal emission in in the sensitive range of optical telescopes such as ZTF (see Chapter \ref{ch:ztf}). 
+
+ \subsection*{Non-Thermal Photons}
+ 
+\emph{Non-thermal photons} are those produced by accelerated particles through various cooling processes. Given its connection to accelerated charged particles, this non-thermal emission is most relevant for identifying sources of cosmic rays and neutrinos. Inhereited from the parent particle population, non-thermal emission is often characterised by power-law energy spectra.
+
+\emph{Synchrotron radiation} is generated by populations of charged paricles moving through magnetic fields, which then emit typically at radio frequencies. Synchrotron spectra are often well-described by broken power law models with a characteristic spectral break, from which the break frequency and power law indices then being used to infer the physical properties of the synchrotron-emitting region.  This procedure of particular relevance to this thesis (see Chapter \ref{ch:bran}) 
+
+In all cases, neutrino production is accompanied by a flux of pionic gamma-rays. Neutral pions generated in Equation \ref{eq:GZK_pi0} subsequently decay to a photon pair:
 
 \begin{equation}
-E_{\gamma}E_{p} \sim \Gamma ^{2} 0.16 \,  \textup{GeV}^{2}
-\label{eq:delta_res}
-\end{equation} 
+	\pi_{0} \rightarrow \gamma + \gamma
+\end{equation}
 
-Waxmann-Bachall.
+with the photon energy lying in the gamma-ray range. However, these can be subsequently absorbed, so neutrinos may be produced in seemingly gamma-dark sources. Just as for neutrinos, pp gamma-rays will follow a characteristic power law spectrum, while for p$\gamma$ the spectrum will be more peaked.
 
-glashow
+Much like the GZK cutoff, above $\sim$TeV energies the probability that a given photon will scatter on a CMB photon rapidly increases: 
 
-MeV neutrinos from where? for ccsne
-solar neutrino cycle
+\begin{equation}
+	\gamma + \gamma_{CMB} \rightarrow \delta^{0}?
+	\label{eq:gamma_cmb}
+\end{equation}
 
-charged current
-neutral current
+Equation \ref{eq:gammma_cmb} leads to \emph{gamma-ray attenuation}, which strongly suppresses TeV flux from more distant objects. The vast majority of \textbf{detected} TeV gamma-ray emitters are thus located in the galaxy and local universe.
+
+inverse compton
+ 
+ power law
+ 
+ radio
+ 
+ One key challenge is distinguishing between \emph{leptonic emission} i.e arriving from accelerated electrons, and \emph{hadronic emission} which arises from protons and other hadrons. While lower energy (i.e radio) emission is generally leptonic, it is hard to distinguish between leptonic, hadronic or mixed lepto-hadronic emission at higher energies.
+ 
+ Within the resolution of most source Spectral Energy Distributions (SEDs), these can be challenging to distinguish. 
+ 
+ Pion bump
+ 
+ Blazars see ch:sources leptonic vs hadronic
+ 
+ \subsection*{Spectroscopy}
+ 
+While photon observations are typically integrated over relatively-wide rsange of wavelengths, additional information can be gleaned from \emph{high-resolution spectroscopy}, in which emission in fine wavelength bins can be analysed. With precision measurements  ..
+
+photoelectric effect?
+
+\emph{Emission lines} are generated through photon emission at particular nuclear resonances, and can be used to infer the chemical composition of astrophysical objects. The exact energy is fixed by differeing electron energy levels, and this produces a characteristic sequence of emission lines at different energies corresponding to different energy transitions. The most abundant sequence is the \emph{Hydrogen lines}, alternatively named the \emph{Balmer series}.
+
+Identified emission lines can be used to infer \emph{redshift}, by comparing the observed wavelength of emission to the expected one, giving a measurement of distance to astrophysical objects. It can also be used for classification, with the temporal evolution of emission lines being the prime method to distinguish astrophysical populatioms. An example spectrum is shown in Figure X....
 
 \section{Gravitational Waves}
 

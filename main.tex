@@ -128,14 +128,14 @@
 %\titlehead{The \texttt{kaobook} class}
 \subject{Doctoral Thesis}
 
-\title[Search for electromagnetic counterparts to neutrinos and gravitational waves]{Search for electromagnetic counterparts to neutrinos and gravitational waves
-\subtitle{Searching for sources of astrophysical neutrinos and gravitational waves}
+\title[Search for Multi-Messenger Transients with IceCube and ZTF]{Search for Multi-Messenger Transients with IceCube and ZTF
+%\subtitle{Searching for sources of astrophysical neutrinos and gravitational waves}
 	
 \author[Robert Stein]{Robert Stein}}
 
 \date{\today}
 
-\publishers{Humboldt Universitaet Berlin}
+\publishers{Humboldt Universitaet zu Berlin}
 
 %----------------------------------------------------------------------------------------
 
@@ -165,10 +165,6 @@
 \uppertitleback{\@titlehead} % Header
 
 \lowertitleback{
-	\textbf{Disclaimer}\\
-	You can edit this page to suit your needs. For instance, here we have a no copyright statement, a colophon and some other information. This page is based on the corresponding page of Ken Arroyo Ohori's thesis, with minimal changes.
-	
-	\medskip
 	
 	\textbf{No copyright}\\
 	\cczero\ This book is released into the public domain using the CC0 code. To the extent possible under law, I waive all copyright and related or neighbouring rights to this work.
@@ -187,7 +183,7 @@
 	\medskip
 	
 	\textbf{Publisher} \\
-	First printed in Feb 2021 by \@publishers
+	First printed in Oct 2021 by \@publishers
 }
 \makeatother
 
@@ -220,6 +216,8 @@
 
 \input{chapters/preface.tex}
 \index{preface}
+\input{chapters/abstract.tex}
+\input{chapters/zusammenfassung.tex}
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS & LIST OF FIGURES/TABLES
@@ -261,9 +259,9 @@
 \pagelayout{margin} % Restore margins
 
 
-%\input{chapters/introduction.tex}
+\input{chapters/introduction.tex}
 \input{chapters/neutrino_theory.tex}
-%\input{chapters/neutrino_sources.tex}
+\input{chapters/neutrino_sources.tex}
 
 % Icecube
 
@@ -274,8 +272,8 @@
 %
 \input{chapters/icecube.tex}
 \input{chapters/likelihood_analysis.tex}
-%\input{chapters/neutrino_cosmology.tex}
-%\input{chapters/results.tex}
+\input{chapters/neutrino_cosmology.tex}
+\input{chapters/results.tex}
 \input{chapters/realtime_analysis.tex}
 %
 %%ztf
@@ -285,9 +283,9 @@
 \addpart{Optical follow-up with ZTF}
 \pagelayout{margin} % Restore margins
 
-%\input{chapters/ztf.tex}
-%\input{chapters/ztf_followup_pipeline.tex}
-%\input{chapters/bran.tex}
+\input{chapters/ztf.tex}
+\input{chapters/ztf_followup_pipeline.tex}
+\input{chapters/bran.tex}
 
 
 \pagelayout{wide} % No margins
@@ -297,7 +295,7 @@
 %
 %% conclusion
 %
-%\input{chapters/summary_outlook.tex}
+\input{chapters/summary_outlook.tex}
 %\input{chapters/overflow.tex}
 
 \appendix % From here onwards, chapters are numbered with letters, as is the appendix convention
