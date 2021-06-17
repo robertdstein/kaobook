@@ -72,9 +72,7 @@ The electron neutrino was first proposed as a particle by Pauli in 1930 as a sol
 	n \rightarrow p + e^{-} + \nu_{e}
 \end{equation}
 
- However, this particle was proven to be more than a theoretical construct, with its existence confirmed via direct detection of \emph{beta capture} in 1956 \sidecite{cowan_56}.
-
-In parallel, the \emph{Standard Solar Model} was developed over the course of the 20th century, which correctly identified that the sun was powered by nuclear fusion \sidecite{bethe_39}. This model came with a firm prediction of a guaranteed flux of electron anti-neutrinos, \emph{solar neutrinos}, which would be produced in tandem with thermal radiation. The first attempt to measure the solar neutrino flux was by the Homestake experiment in 1964 via Cl$^{37} \rightarrow$ Ar $^{37}$, which unexpectedly detected a flux that was only one third the predicted level \sidecite{davis_68}. This deficit, dubbed the \emph{solar neutrino problem}, was subsequently confirmed by many other experiments.
+ However, this particle was proven to be more than a theoretical construct, with its existence confirmed via direct detection of \emph{beta capture} in 1956 \sidecite{cowan_56}. In parallel, the \emph{Standard Solar Model} was developed over the course of the 20th century, which correctly identified that the sun was powered by nuclear fusion \sidecite{bethe_39}. This model came with a firm prediction of a guaranteed flux of electron anti-neutrinos, \emph{solar neutrinos}, which would be produced in tandem with thermal radiation. The first attempt to measure the solar neutrino flux was by the Homestake experiment in 1964 via Cl$^{37} \rightarrow$ Ar $^{37}$, which unexpectedly detected a flux that was only one third the predicted level \sidecite{davis_68}. This deficit, dubbed the \emph{solar neutrino problem}, was subsequently confirmed by many other experiments.
 
 The solar neutrino problem was finally resolved in 2001, when the electron neutrino deficit was conclusively matched with a corresponding excess of muon neutrinos \sidecite{sno_01}. This confirmed the presence of \emph{neutrino oscillations}, by which neutrinos can change flavour states. To undergo oscillations, neutrinos must have different non-zero mass states, in contrast to previous assumptions in the Standard Model of particle physics. 
 
@@ -82,10 +80,14 @@ A new generation of experiments have developed to probe neutrino flavour oscilla
 
 In 1987, experiments studying the solar neutrino problem unexpectedly measured a simultaneous excess in neutrinos. This detection occurred shortly before the discovery of a nearby supernova in the \emph{Large Magellanic Clouds} (nearby dwarf galaxies orbiting the Milky Way), and coincided with the core-collapse of that supernova \sidecite{sn1987a_neutrino}. These \emph{supernova neutrinos} were the first that could be cleanly identified as arising from beyond our solar system, and confirmed the essential \emph{neutrino cooling} that occurs during the stellar core collapse (see also Chapter \ref{ch:sources}). This was also the first example of astronomy with multiple messengers. Only nearby galactic supernovae produce a sufficiently large flux to be clearly identified against detector backgrounds. However, the predicted diffuse supernova neutrino background will soon be within reach of experiments.
 
-For this thesis, the most relevant neutrino detection method is via \emph{charged current} (CC) and \emph{neutral current} (NC) interactions of the weak force, used for neutrino telescopes such as IceCube (see Chapter \ref{ch:icecube}). CC interactions are mediated by W$^{\pm}$ bosons:
+For this thesis, the most relevant neutrino detection method is via \emph{charged current} (CC) and \emph{neutral current} (NC) interactions of the weak force. CC interactions are mediated by W$^{\pm}$ bosons:
 
 \begin{equation}
-	\nu_{l} + \rightarrow W^{\pm} \rightarrow l^{\pm} + X
+	\nu_{l} + N \rightarrow W^{\pm} \rightarrow l^{\pm} + X
+\end{equation}
+
+\begin{equation}
+	\nu_{\mu} + N \rightarrow W^{\pm} \rightarrow \mu^{\pm} + X
 \end{equation}
 
 while NC interactions are instead mediated by Z bosons:
@@ -98,7 +100,7 @@ where l is a lepton family (e, $\mu$, $\tau$, N is a nucleon and X represents th
 
 frank tamm and cherenkov here?
 
-This detection principle is employed by km$^{3}$-scale neutrino telescopes targeting neutrinos at higher (GeV-PeV) energies. Interactions of cosmic rays with the atmosphere also produce a guaranteed flux of \emph{atmospheric neutrinos} which extend to `higher' (GeV-TeV) energies, and this was confirmed observationally with the AMANDA neutrino telescope in 2002 \sidecite{amanda_02}. This flux extends over many orders of magnitude, as can be seen in Figures \ref{fig:ic_diffuse_flux} and \ref{fig:nu_spectrum}. It is expected that there should be a distinct second component of \emph{charm} or \emph{prompt atmospheric neutrinos}, generated from the decay of charm mesons which are produced through interactions of cosmic rays with atmospheric nuclei \cite{spurio_18}. This component has not yet been measured, but remains subdominant relative to the astrophysical flux.
+This detection principle is employed by km$^{3}$-scale neutrino telescopes such as IceCube (see Chapter \ref{ch:icecube} to target neutrinos at higher (GeV-PeV) energies. Interactions of cosmic rays with the atmosphere should produce a guaranteed flux of \emph{atmospheric neutrinos} at these energies, and this was confirmed observationally with the AMANDA neutrino telescope in 2002 \sidecite{amanda_02}. This flux extends over many orders of magnitude, as can be seen in Figures \ref{fig:ic_diffuse_flux} and \ref{fig:nu_spectrum}. 
 
 \begin{figure}
 	\centering \includegraphics{icecube/ic_diffuse_flux}
@@ -106,11 +108,14 @@ This detection principle is employed by km$^{3}$-scale neutrino telescopes targe
 	\label{fig:ic_diffuse_flux}
 \end{figure}
 
-\emph{Astrophysical neutrinos} are to some degree guaranteed as a byproduct of high-energy cosmic ray production, resulting via pion production from the interaction of cosmic rays with ambient matter (pp) and radiation (p$\gamma$). 
+\emph{Astrophysical neutrinos} (high-energy neutrinos from astrophysical sources) are to some degree guaranteed as a byproduct of high-energy cosmic ray production, resulting via pion production from the interaction of cosmic rays with ambient matter (pp) and radiation (p$\gamma$). In addition to the photohadronic interactions introduced in Equation \ref{eq:GZK_pip}, simple collisions between accelerated protons can also lead to pion production in a process analogous to fixed-target accelerator experiments:
 
-pp?
+\begin{equation}
+	p + p \rightarrow \pi^{\pm}, \pi^{0}, p, n, ...
+	\label{eq:pp}
+\end{equation}
 
-Charged pions introduced in Equation \ref{eq:GZK_pip} will ultimately decay to muons, generating muon neutrinos:
+where higher-mass baryons and hadrons can also be produced \cite{spurio_18}. In general the daughter pions from Equation \ref{eq:pp} will follow a characteristic power law inherited from the parent proton spectrum. Regardless of the production mechanism, charged pions will ultimately decay to muons, generating muon neutrinos:
 
 \begin{equation}
 	\pi^{\pm} \rightarrow \nu_{\nu} + \mu^{\pm}
@@ -122,24 +127,11 @@ These muons will further decay to electrons, generating two additional neutrinos
 	\pi^{\pm} \rightarrow \nu_{\mu} + \mu^{\pm} \rightarrow \nu_{\nu} + \nu_{\mu} + \nu_{e} + e^{\pm}
 \end{equation}
 
-pp?
-
 However, the extent of astrophysical neutrino production depends very substantially on the conditions at cosmic ray accelerators, with high fluxes requiring abundant target material for pion production. A flux of astrophysical neutrinos was first discovered by IceCube in 2013 \sidecite{ic_astro_13}, at a level close to the maximal one allowed by cosmic ray measurements \sidecite{waxman_bahcall_98}. As can be seen from the latest flux measurement in Figure \ref{fig:ic_diffuse_flux}, this astrophysical component begins to dominate over the atmospheric neutrinos above $\sim$100 TeV. No neutrino source class has yet been detected at the 5$\sigma$ level, but possible sources of these astrophysical neutrinos are discussed further in Chapter \ref{ch:sources}.
 
-$E^{-2}$
+It is expected that there should be a distinct second atmospheric component of \emph{charm} or \emph{prompt atmospheric neutrinos}, generated from the decay of charm mesons which are produced through interactions of cosmic rays with atmospheric nuclei \cite{spurio_18}. This component has not yet been measured, but as can be seen in Figure \ref{fig:ic_diffuse_flux} it remains subdominant relative to the astrophysical flux.
 
-For a photon target, with p$\gamma$ 
-
-Equation \ref{eq:GZK_pip} can be compactly rewritten as a threshold photon energy required for the neutrino production at a given energy, $E_{\nu}$:
-
-\begin{equation}
-	E_{\gamma}E_{p} \sim \Gamma ^{2} 0.16 \,  \textup{GeV}^{2}
-	\label{eq:delta_res}
-\end{equation} 
-
-where $\Gamma$ is the bulk Lorentz factor of the medium.
-
-At the very highest energies, it is expected that the impact of the GZK cutoff (Equations \ref{eq:GZK_pip} and \ref{eq:GZK_pi0}) should generate a flux of neutrinos through interactions of UHECRs with the cosmic microwave background. These \emph{Cosmogenic Neutrinos} have not yet been observed, but upcoming radio neutrino observatories in particular are seeking to measure them. The flux of cosmogenic neutrinos depends very strongly on the composition, density and evolution of cosmic ray sources, so it remains unclear whether it will be accessible to these detectors.
+At the very highest energies, it is expected that the impact of the GZK cutoff (Equations \ref{eq:GZK_pip}) should generate a flux of neutrinos through interactions of UHECRs with the cosmic microwave background. These \emph{Cosmogenic Neutrinos} have not yet been observed, but upcoming radio neutrino observatories in particular are seeking to measure them. The flux of cosmogenic neutrinos depends very strongly on the composition, density and evolution of cosmic ray sources, so it remains unclear whether it will be accessible to these detectors.
 
 \begin{figure}[!ht]
 	\includegraphics{mma/nu_spectrum}
@@ -163,28 +155,57 @@ At the very highest energies, it is expected that the impact of the GZK cutoff (
 
 Photon astronomy, in particular that in optical wavelengths, is the oldest branch of astronomy. As clear in Figure \ref{fig:mwsky}, our own galaxy is the most obvious structure at all wavelengths. The different pictures of the galaxy are also noteworthy. One example is dust extinction obscuring a large portion of the optical emission (middle panel), but  which is reprocessed to yield a particularly clear infra-red image (upper middle panel). This is an illustration of one broader principle, that interpolation between different photon energies can reveal additional information about astrophysical objects.
 
-In general, photon emission can be divided into two broad classes, \emph{thermal emission}
- and \emph{non-thermal emission}. Thermal emission is approximate black-bodies, and produces characteristic spectra. Non-thermal emission arises from particle acceleration, and is typically characterised by power-law emission. Objects can have both components. Thermal emission is typically centered in IR, optical or UV wavelengths, while non-thermal emission is typically manifested in both low energies (radio) and high-energies (hard X-rays and gamma-rays).
+In general, photon emission can be divided into two broad classes, \emph{thermal emission} and \emph{non-thermal emission}. Thermal emission is approximate black-bodies, and produces characteristic spectra. Non-thermal emission arises from particle acceleration, and is typically characterised by power-law emission. Objects can have both components. Thermal emission is typically centred in IR, optical or UV wavelengths, while non-thermal emission is typically extends from low energies (radio) to high-energies (hard X-rays and gamma-rays).
  
  \subsection*{Thermal Photons}
  
- \emph{Thermal photons} are those produced by \emph{blackbody radiation}, which have a characteristic form :
+ \emph{Thermal photons} are those produced by \emph{blackbody radiation}, which have a characteristic form described in \emph{Planck's Law}:
  
  \begin{equation}
- 	content...
+ 	\frac{dE}{dt d\nu dA d\Omega} \equiv B(\nu, T) = \frac{2h\nu^{3}}{c^{2}} \frac{1}{e^{h\nu/k_{b}T} -1}
  \end{equation}
 
-where T is the temperature, R is the radius and D is the distance. Many of the astrophysical population introduced in Chapter \ref{ch:sources}, such as \emph{supernovae} or \emph{tidal disruption events} can be well described by thermal spectra. With observations in multiple bands, such as optical, IR and UV, the physical properties of a source can be inferred at different observation epochs. 
+where B is the \emph{Spectral radiance} of the source, $\nu$ is the frequency, and T is the temperature \sidecite{planck_01}. By integrating over the full solid angle, and accounting for redshifting (see Chapter \ref{ch:cosmology}), the observed flux on Earth can be parameterised as:
 
-Most astrophysical populations have temperatures >10$^{3}$ K and <10$^{5}$ K, meaning that a substatial fraction of the thermal emission in in the sensitive range of optical telescopes such as ZTF (see Chapter \ref{ch:ztf}). 
+\begin{equation}
+	um
+\end{equation}
+
+where R is the radius of the object, and D is the distance to it. Many of the astrophysical population introduced in Chapter \ref{ch:sources}, such as \emph{supernovae} or \emph{tidal disruption events} can be well described by such thermal spectra. With observations in multiple bands, such as optical, IR and UV, the physical properties of a source can be inferred at different observation epochs. 
+
+Most astrophysical populations have temperatures >10$^{3}$ K and <10$^{5}$ K, meaning that a substantial fraction of the thermal emission in in the sensitive range of optical telescopes such as ZTF (see Chapter \ref{ch:ztf}). Surveys at these wavelengths are well-suited to first identify such objects for use e.g in neutrino astronomy, even though this thermal emission is unrelated to the hadronic processes which accelerate particles. Having found these objects, their neutrino emission can then be studied e.g with dedicated likelihood analysis as introduced in Chapter \ref{ch:llh}. In any case, the thermal emission of such objects provides an estimate of the source bolometric luminosity, giving a scale for energy output, and also an approximate model for the photon field in the source.
+
+ \subsection*{Spectroscopy}
+
+While photon observations are typically integrated over relatively-wide range of wavelengths, additional information can be gleaned from \emph{high-resolution spectroscopy}, in which emission in fine wavelength bins can be analysed. With precision measurements  ..
+
+photoelectric effect?
+
+\emph{Emission lines} are generated through photon emission at particular nuclear resonances, and can be used to infer the chemical composition of astrophysical objects. The exact energy is fixed by differing electron energy levels, and this produces a characteristic sequence of emission lines at different energies corresponding to different energy transitions. The most abundant sequence is the \emph{Hydrogen lines}, alternatively named the \emph{Balmer series}.
+
+Identified emission lines can be used to infer \emph{redshift}, by comparing the observed wavelength of emission to the expected one, giving a measurement of distance to astrophysical objects. It can also be used for classification, with the temporal evolution of emission lines being the prime method to distinguish astrophysical populations. An example spectrum is shown in Figure X....
 
  \subsection*{Non-Thermal Photons}
  
-\emph{Non-thermal photons} are those produced by accelerated particles through various cooling processes. Given its connection to accelerated charged particles, this non-thermal emission is most relevant for identifying sources of cosmic rays and neutrinos. Inhereited from the parent particle population, non-thermal emission is often characterised by power-law energy spectra.
+\emph{Non-thermal photons} are those produced by accelerated particles through various cooling processes. Given its connection to accelerated charged particles, this non-thermal emission is most relevant for identifying sources of cosmic rays and neutrinos. Inherited from the parent particle population, non-thermal emission is often characterised by power-law energy spectra.
 
-\emph{Synchrotron radiation} is generated by populations of charged paricles moving through magnetic fields, which then emit typically at radio frequencies. Synchrotron spectra are often well-described by broken power law models with a characteristic spectral break, from which the break frequency and power law indices then being used to infer the physical properties of the synchrotron-emitting region.  This procedure of particular relevance to this thesis (see Chapter \ref{ch:bran}) 
+\emph{Synchrotron radiation} is generated by populations of charged particles moving through magnetic fields, which then emit typically at radio frequencies. Given that the parent electron spectrum will often follow a power law arising from Fermi acceleration up to a maximum energy, the synchrotron radiation will also follow a power law up to a corresponding \emph{peak frequency}. Synchrotron emission scales with $\sim$E$_{e}^{2}$, modifying the observed flux spectral index relative to the parent electron one. Above the peak frequency, the lack of higher-energy electrons will lead to an exponential suppression of flux, with this break typically appearing somewhere in the IR, optical, UV or X-ray bands.
 
-In all cases, neutrino production is accompanied by a flux of pionic gamma-rays. Neutral pions generated in Equation \ref{eq:GZK_pi0} subsequently decay to a photon pair:
+At lower energies, these synchrotron photons can be reabsorbed by the electrons, a process known as \emph{Synchrotron self-absorption} (SSA). SSA leads to a suppression in the observed synchrotron flux at Earth up to a \emph{Synchotron self-absorption frequency} which depends primarily on magnetic field strength, above which the synchrotron emission is detected unattenuated. 
+
+phase space for interaction decreases with e of the photon
+
+Synchrotron spectra at radio wavelengths are thus well-described by broken power law models with a characteristic SSA spectral break, with the break frequency and power law indices then being used to infer the physical properties of the synchrotron-emitting region.  This procedure of particular relevance to this thesis (see Chapter \ref{ch:bran}). 
+
+Non-thermal electrons will also generate photons at higher energies, leading to \emph{leptonic gamma-rays}. High-energy photons can be generated by \emph{Inverse Compton Scattering} (IC), in which the electrons scatter off photons and transfer energy:
+
+\begin{equation}
+	e^{-} + \gamma \rightarrow e^{-} + \gamma'
+\end{equation}
+
+where outgoing photon energy outgoing, $\gamma'$, is larger than the incoming photon energy $\gamma$. In general, extensive leptonic gamma-ray emission can be produced in astrophysical objects through \emph{Synchrotron Self-Compton} (SSC) mechanism. In this case, an accelerated population of electrons generate abundant photons through synchrotron emission, and this same electron population then upscatters these photons to higher energies via the IC effect \sidecite{spurio_18}. Alternatively leptonic gamma-rays may be produced through IC scattering with photons from an \emph{external radiation field} (i.e not from the electrons themselves), for example thermal X-rays in AGN disks (see Chapter \ref{ch:sources}).
+
+In addition to leptonic gamma-rays, \emph{hadronic gamma rays} are produced through the decay of neutral pions. Given that these $\pi^{0}$ are always produced alongside charged pions, neutrino production must always be accompanied by a flux of hadronic gamma-rays. In principle, this can provide a photon tracer for neutrino sources. The neutral pions generated in Equations \ref{eq:GZK_pi0} and \ref{eq:pp}, will subsequently decay to a photon pair:
 
 \begin{equation}
 	\pi_{0} \rightarrow \gamma + \gamma
@@ -192,38 +213,18 @@ In all cases, neutrino production is accompanied by a flux of pionic gamma-rays.
 
 with the photon energy lying in the gamma-ray range. However, these can be subsequently absorbed, so neutrinos may be produced in seemingly gamma-dark sources. Just as for neutrinos, pp gamma-rays will follow a characteristic power law spectrum, while for p$\gamma$ the spectrum will be more peaked.
 
-Much like the GZK cutoff, above $\sim$TeV energies the probability that a given photon will scatter on a CMB photon rapidly increases: 
+One key challenge for gamma-ray astronomy is distinguishing between leptonic emission and hadronic emission. While lower energy (i.e radio) emission is generally leptonic, it is hard to distinguish between leptonic, hadronic or mixed lepto-hadronic emission at higher energies. Given this degeneracy, we cannot infer the existence of a flux of accompanying neutrinos merely because of a gamma-ray detection.
+
+In any case, even if gamma-rays escape their production site, they may not reach Earth. Above $\sim$TeV energies, gamma-rays are increasingly like to interact with photons from the \emph{Extragalactic Background Light} (EBL) which pervades the universe, leading to \emph{pair production}: 
 
 \begin{equation}
-	\gamma + \gamma_{CMB} \rightarrow \delta^{0}?
-	\label{eq:gamma_cmb}
+	\gamma + \gamma_{EBL} \rightarrow e^{+} + e^{-} 
+	\label{eq:gamma_ebl}
 \end{equation}
 
-Equation \ref{eq:gammma_cmb} leads to \emph{gamma-ray attenuation}, which strongly suppresses TeV flux from more distant objects. The vast majority of \textbf{detected} TeV gamma-ray emitters are thus located in the galaxy and local universe.
-
-inverse compton
+Similar to the GZK cutoff, Equation \ref{eq:gamma_ebl} leads to \emph{EBL absorption} which strongly attenuates the TeV gamma-ray flux from more distant objects. The vast majority of detected TeV gamma-ray emitters are thus located in the galaxy and local universe.
  
- power law
- 
- radio
- 
- One key challenge is distinguishing between \emph{leptonic emission} i.e arriving from accelerated electrons, and \emph{hadronic emission} which arises from protons and other hadrons. While lower energy (i.e radio) emission is generally leptonic, it is hard to distinguish between leptonic, hadronic or mixed lepto-hadronic emission at higher energies.
- 
- Within the resolution of most source Spectral Energy Distributions (SEDs), these can be challenging to distinguish. 
- 
- Pion bump
- 
- Blazars see ch:sources leptonic vs hadronic
- 
- \subsection*{Spectroscopy}
- 
-While photon observations are typically integrated over relatively-wide rsange of wavelengths, additional information can be gleaned from \emph{high-resolution spectroscopy}, in which emission in fine wavelength bins can be analysed. With precision measurements  ..
-
-photoelectric effect?
-
-\emph{Emission lines} are generated through photon emission at particular nuclear resonances, and can be used to infer the chemical composition of astrophysical objects. The exact energy is fixed by differeing electron energy levels, and this produces a characteristic sequence of emission lines at different energies corresponding to different energy transitions. The most abundant sequence is the \emph{Hydrogen lines}, alternatively named the \emph{Balmer series}.
-
-Identified emission lines can be used to infer \emph{redshift}, by comparing the observed wavelength of emission to the expected one, giving a measurement of distance to astrophysical objects. It can also be used for classification, with the temporal evolution of emission lines being the prime method to distinguish astrophysical populatioms. An example spectrum is shown in Figure X....
+Pion bump
 
 \section{Gravitational Waves}
 
