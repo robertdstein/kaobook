@@ -4,7 +4,7 @@
 
 \documentclass[
     a4paper, % Page size
-	fontsize=10pt, % Base font size
+    fontsize=10pt, % Base font size
     twoside=true, % Use different layouts for even and odd pages (in particular, if twoside=true, the margin column will be always on the outside)
 	%open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
 	%chapterentrydots=true, % Uncomment to output dots from the chapter name to the page number in the table of contents
@@ -33,9 +33,8 @@
 \usepackage{kaobiblio}
 \addbibresource{main.bib} % Bibliography file
 
-% Load mathematical packages for theorems and related environments. NOTE: choose only one between 'mdftheorems' and 'plaintheorems'.
-\usepackage{mdftheorems}
-%\usepackage{plaintheorems}
+% Load mathematical packages for theorems and related environments
+\usepackage[framed=true]{kaotheorems}
 
 % Load the package for hyperreferences
 \usepackage{kaorefs}
@@ -141,11 +140,7 @@
 
 % Note that \maketitle outputs the pages before here
 
-% If twoside=false, \uppertitleback and \lowertitleback are not printed
-% To overcome this issue, we set twoside=semi just before printing the title pages, and set it back to false just after the title pages
-\KOMAoptions{twoside=semi}
 \maketitle
-\KOMAoptions{twoside=false}
 
 %----------------------------------------------------------------------------------------
 %	PREFACE

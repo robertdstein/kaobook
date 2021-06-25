@@ -2,16 +2,19 @@
 
 ## Acknowledgements
 
-This class is based on the work of [Ken Arroyo 
-Ohori](https://3d.bk.tudelft.nl/ken/en/) for his doctoral thesis. The 
-main ideas behind the layout can be found in this [blog 
-post](https://3d.bk.tudelft.nl/ken/en/2016/04/17/a-1.5-column-layout-in-latex.html). 
+This class is based on the work of [Ken Arroyo
+Ohori](https://3d.bk.tudelft.nl/ken/en/) for his doctoral thesis.
+The main ideas behind the layout can be found in this [blog
+post](https://3d.bk.tudelft.nl/ken/en/2016/04/17/a-1.5-column-layout-in-
+latex.html). The [Tufte-LaTeX
+class](https://github.com/Tufte-LaTeX/tufte-latex) has also been a
+source of ideas about the layout.
 
-The [Tufte-LaTeX class](https://github.com/Tufte-LaTeX/tufte-latex) has 
-also been a source of ideas about the layout.
-
-Finally my gratitude goes also to [Vel](https://www.vel.nz/) for his 
-patience and his invaluable suggestions about the design.
+My gratitude goes also to [Vel](https://www.vel.nz/), for his patience 
+and his invaluable suggestions about the design, and to all the people 
+who have contributed either on 
+[GitHub](https://github.com/fmarotta/kaobook/graphs/contributors) or by 
+sending e-mails.
 
 ## Description
 
@@ -34,6 +37,17 @@ The salient features of the class are as follows.
 A better description can be found at [LaTeX 
 Templates](http://www.latextemplates.com/template/kaobook). If you think 
 that a PDF is worth a thousand words, have a look at [this](example_and_documentation.pdf).
+
+## Showcase
+
+In the [examples](examples) directory you can find some sample 
+documents, but here are some more books or reports created with the 
+kaobook class. If you want to add a link to your work, please send me an 
+email or open a pull request!
+
+* [Growing Open Source Projects with a Stable
+Foundation](https://www.cyrius.com/foss-foundations/growing-open-source-projects.pdf)
+* [Cours De Physique - Mécanique Classique](https://femto-physique.fr/mecanique/pdf/book_meca.pdf)
 
 ## Getting Started
 
@@ -104,11 +118,11 @@ you can replace pdflatex with your favorite engine, like *e.g.* xelatex.
 
 `cd` into the root of the repository, and run
 ```
-pdflatex -output-directory examples/documentation main # The .tex is optional
+pdflatex -output-directory examples/documentation main.tex
 biber -output-directory examples/documentation main
-pdflatex -output-directory examples/documentation main
-pdflatex -output-directory examples/documentation main
-pdflatex -output-directory examples/documentation main
+pdflatex -output-directory examples/documentation main.tex
+pdflatex -output-directory examples/documentation main.tex
+pdflatex -output-directory examples/documentation main.tex
 ```
 
 To compile the glossary and nomenclature as well, `cd` into the 
@@ -132,11 +146,14 @@ To update kaobook you should download the whole repository (or one of
 the releases) again, and replace all of your old files with the newer
 ones, *except* for the main.tex and the files that you have created,
 like the chapters of the book. The crucial files that pertain to kaobook
-and that you always have to update are:
+and that you should always update are:
 
 1. `kaobook.cls`;
 2. `kaohandt.cls`;
-3. the whole `styles` directory.
+3. `kao.sty`;
+3. `kaobiblio.sty` (optional);
+4. `kaorefs.sty` (optional);
+5. `kaotheorems.sty` (optional);
 
 These files should be in the same folder as your `main.tex`. Even if a
 file has not been modified, I would still suggest to replace everything
@@ -144,15 +161,15 @@ because it is easier.
 
 In practice, I would do as follows. I would have a directory, called for 
 example 'my\_book', with all the files necessary for the book: 
-`kaobook.cls`, `kaohand.cls`, the `styles` directory, and the 
-`main.tex`. I like to have a separate file for each chapter, so I would 
-also have a directory called `chapters`, with all the `.tex` files with 
-the actual chapters. Then, when I want to update kaobook, I would 
-download the GitHub repository (or one of the releases) into a directory 
-called 'kaobook', and finally copy the `kaobook.cls`, `kaohandt.cls`, 
-and the whole `styles` directory from 'kaobook' to 'my\_book'. Once the 
-update is completed, the whole 'my\_book' directory can be uploaded on 
-Overleaf or on a personal ShareLaTeX server.
+`kaobook.cls`, `kaohand.cls`, the `*.sty` files, and the `main.tex`. I 
+like to have a separate file for each chapter, so I would also have a 
+directory called `chapters`, with all the `.tex` files with the actual 
+chapters. Then, when I want to update kaobook, I would download the 
+GitHub repository (or one of the releases) into a directory called 
+'kaobook', and finally copy the `kaobook.cls`, `kaohandt.cls`, and the 
+whole `styles` directory from 'kaobook' to 'my\_book'. Once the update 
+is completed, the whole 'my\_book' directory can be uploaded on Overleaf 
+or on a personal ShareLaTeX server.
 
 Alternatively, advanced users can download the repository in their local 
 texmf tree; see the [instructions](instructions) directory for hints.
@@ -161,22 +178,15 @@ texmf tree; see the [instructions](instructions) directory for hints.
 
 There are two main class files: `kaobook.cls`, used for books, and 
 `kaohandt.cls`, used for reports or handouts; both heavily rely on 
-`styles/kao.sty`, which contains the bulk of the definitions that are 
-common to both classes. In the future there may be another class for 
-theses.
+`kao.sty`, which contains the bulk of the definitions that are common to 
+both classes. In the future there may be another class for theses.
 
 Some examples and templates are listed in the `examples` directory. The 
 book that documents the class is an example itself, and the pdf has been 
 copied to the root of the repository so that it will be found more 
 easily.
 
-Please make sure that you add the appropriate `styles` directory
-and one of the main class files (`kaobook.cls`, used for books, and
-`kaohandt.cls`, used for reports or handouts) to the folders of the
-examples. This is important if you want to try out the examples by
-yourself. Read the explanations inside the `examples` folder.
-
-The `styles` directory contains additional packages that are used by the 
+The `*.sty` files contain additional packages that are used by the 
 class, but in principle they are independent of it (even though in 
 practice it is still not so).
 
@@ -196,6 +206,15 @@ changing the code you must follow the style guidelines of the site:
 extensive commenting and clear separation of the code into nicely 
 formatted blocks.
 
+## Supporting
+
+I am always happy to help as much as I can, and I am glad if someone
+uses the `kaobook` class for their works, so there is no real need to do
+anything: the kaobook can be used just like any other LaTeX package (no 
+need to add copyright statements). However, if you want to aknowledge 
+kaobook, adding somewhere a sentence like 'This book was typeset with the
+kaobook class' would suffice.
+
 Coffee keeps me awake and helps me writing a better LaTeX template. As 
 another way to contribute, you can buy me a coffee through PayPal: 
 https://paypal.me/marofede.
@@ -208,11 +227,12 @@ kaobook class, consisting of `kaobook.cls`, `kaohandt.cls`, and
 on the other hand, the templates and the examples in the `examples` 
 directory.
 
-The first work is licensed under the [LaTeX Project Public License](https://www.latex-project.org/lppl/), so if 
-you want to modify and/or distribute the `*.cls` and `*.sty` files 
-pertaining to this work you have to complain with the terms of the 
-license. However, if you just want to use the class to compile your 
-documents you need not worry about the license.
+The first work is licensed under the [LaTeX Project Public
+License](https://www.latex-project.org/lppl/), so if you want to modify
+and/or distribute the `*.cls` and `*.sty` files pertaining to this work
+you have to complain with the terms of the license. However, if you just
+want to use the class to compile your documents you need not worry about
+the license.
 
 The second work is released into the public domain with a Creative 
 Commons Zero License.
