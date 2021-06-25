@@ -23,13 +23,19 @@ As introduced in Chapter \ref{ch:ztf}, all ZTF science images are processed, sig
 These cuts typically yield $\sim$0.2 candidates per square degree of sky. Promising candidates are prioritised for spectroscopic classification, to confirm or rule out a possible association with a given neutrino. 
 
 \section{Neutrino Follow-up Program}
-ZTF has since its inception had a dedicated program to identify sources of high-energy astrophysical neutrinos, through targeted follow-up observations. A significant component of this thesis was the initial development and operation of this neutrino follow-up program. Given the proliferation of proposed source classes, neutrino follow-up are characterised by searching relatively well-localised regions for poorly-defined objects. This is particularly true for optical follow-up, where potential counterparts include Tidal Disruption Events (TDEs), Type IIn or choked jet SNe, kilonovae, GRB afterglows, superluminous supernovae (SLSNe) or blazar flares (see Chapter \ref{h:sources} for a comprehensive list). While pre-neutrino detections could rule out neutrino production from choked jet supernovae, in most cases we do not even have stringent constraints in when neutrinos may be expected.
+ZTF has since its inception had a dedicated program to identify sources of high-energy astrophysical neutrinos, through targeted follow-up observations. A significant component of this thesis was the initial development and operation of this neutrino follow-up program. Given the proliferation of proposed source classes, neutrino follow-up are characterised by searching relatively well-localised regions for poorly-defined objects. This is particularly true for optical follow-up, where potential counterparts include Tidal Disruption Events (TDEs), Type IIn or choked jet SNe, kilonovae, GRB afterglows, superluminous supernovae (SLSNe) or blazar flares (see Chapter \ref{ch:sources} for a comprehensive list). While pre-neutrino detections could rule out neutrino production from choked jet supernovae, in most cases we do not even have stringent constraints in when neutrinos may be expected.
 
-For neutrinos, spatial and temporal coincidence is defined as the object lying within the reported 90\% localisation rectangle from IceCube, and being detected at least once following the neutrino arrival time. We have followed up N neutrinos in the period from survey start on 2018 March 20 to 2020 June 31, out of a total of N neutrino alerts published by IceCube. Table \ref{tab:nu_alerts} summarises each neutrino alert that has been observed by ZTF. From 2019 June 17, IceCube published neutrino alerts with improved selection criteria to provide an elevated alert rate \sidecite{ic_realtime_19} (see Chapter \ref{ch:realtime} for more details). In addition to 1 of the 12 alerts under the old V1 selection, ZTF followed up 7 of the 19 alerts published under the V2 selection. In general, we aim to follow all well-localised neutrinos of likely astrophysical origin reported by IceCube which are visible to ZTF and can be observed promptly. 
+For neutrinos, spatial and temporal coincidence is ensured by requiring that an object lies within the reported 90\% localisation rectangle from IceCube, and being detected at least once following the neutrino arrival time. We have followed up N neutrinos in the period from survey start on 2018 March 20 to 2020 June 31, out of a total of N neutrino alerts published by IceCube. Table \ref{tab:nu_alerts} summarises each neutrino alert that has been observed by ZTF. From 2019 June 17, IceCube published neutrino alerts with improved selection criteria to provide an elevated alert rate \sidecite{ic_realtime_19} (see Chapter \ref{ch:realtime} for more details). In addition to 1 of the 12 alerts under the old V1 selection, ZTF followed up 7 of the 19 alerts published under the V2 selection. In general, we aim to follow all well-localised neutrinos of likely astrophysical origin reported by IceCube which are visible to ZTF and can be observed promptly. 
  
 Those alerts not observed by ZTF are summarised in Table \ref{tab:nu_non_observed}. Of those 23 alerts not followed up by ZTF, the primary reasons were proximity to the Sun (8/23), alerts with poor localisation and low astrophysical probability (6/23) and alert retraction (4/23). For events which were reported with estimates of astrophysical probability, we chose not to follow up those that had both low astrophysical probability ($<$ 50\%) and large localisation regions ($>$ 10 sq.\,deg.). This value was not reported for high-energy starting events (HESE) under the old IceCube alert selection, nor for one alert, IC200107A, that was identified outside of the standard alert criteria \sidecite{ic200107a} (see also Chapter \ref{ch:realtime}). The full breakdown of neutrino observations statistics can be seen in Figure N.
  
  Each neutrino localisation region can typically be covered by one or two ZTF observation fields. Multiple observations are scheduled for each field, with both $g$ and $r$ filters, and a separation of at least 15 minutes between images. These observations typically last for 300~s, with a typical limiting magnitude of $21.0^{m}$.  ToO observations are typically conducted on the first two nights following a neutrino alert, before swapping to serendipitous coverage as part of the public survey. 
+ 
+ \begin{figure}[!ht]
+ 	\centering \includegraphics{ztf_too/pie}
+ 	\caption{Breakdown of the neutrino follow-up program, as of 2021 June 25. }
+ 	\label{fig:pie}
+ \end{figure}
  
  MENTION THAT COMMISSIONING ONE
  
@@ -51,8 +57,44 @@ Those alerts not observed by ZTF are summarised in Table \ref{tab:nu_non_observe
  		\hline
  	\end{tabular}
  	\caption{Summary of the eight neutrino alerts followed up by ZTF. IC191001A is highlighted in bold. The 90\% area column indicates the region of sky observed at least twice by ZTF, within the reported 90\% localisation, and accounting for chip gaps. The \textit{signalness} estimates the probability that each neutrino is of astrophysical origin, rather than arising from atmospheric backgrounds.}
- 	\label{tab:nu_alerts}
+ 	\label{tab:nu_alerts_old}
  \end{table*}
+
+\begin{table*}
+	\centering
+	\begin{tabular}{||c c c c c c c ||} 
+		\hline
+		\textbf{Event} & \textbf{R.A. (J2000)} & \textbf{Dec (J2000)} & \textbf{90\% area} & \textbf{ZTF obs} &~ \textbf{Signalness}& \textbf{Ref}\\
+		& \textbf{[deg]}&\textbf{[deg]}& \textbf{[sq. deg.]}& \textbf{[sq. deg.]} &&\\
+		\hline
+		IC190503A & 120.28 & +6.35 & 1.9 & 1.4 & 36\% & \cite{ic190503a, ic190503a_ztf} \\ 
+		IC190619A & 343.26 & +10.73 & 27.2 & 21.6 & 55\% & \cite{ic190619a, ic190619a_ztf} \\ 
+		IC190730A & 225.79 & +10.47 & 5.4 & 4.5 & 67\% & \cite{ic190730a, ic190730a_ztf} \\ 
+		IC190922B & 5.76 & -1.57 & 4.5 & 4.1 & 51\% & \cite{ic190922b, ic190922b_ztf} \\ 
+		IC191001A & 314.08 & +12.94 & 25.5 & 20.6 & 59\% & \cite{ic191001a, ic191001a_ztf} \\ 
+		IC200107A & 148.18 & +35.46 & 7.6 & 6.2 & - & \cite{ic200107a, ic200107a_ztf} \\ 
+		IC200109A & 164.49 & +11.87 & 22.5 & 20.1 & 77\% & \cite{ic200109a, ic200109a_ztf} \\ 
+		IC200117A & 116.24 & +29.14 & 2.9 & 2.7 & 38\% & \cite{ic200117a, ic200117a_ztf, ic200117a_ztf2} \\ 
+		IC200512A & 295.18 & +15.79 & 9.8 & 9.3 & 32\% & \cite{ic200512a, ic200512a_ztf} \\ 
+		IC200530A & 255.37 & +26.61 & 25.3 & 22.0 & 59\% & \cite{ic200530a, ic200530a_ztf, ic200530a_ztf2} \\ 
+		IC200620A & 162.11 & +11.95 & 1.7 & 1.2 & 32\% & \cite{ic200620a, ic200620a_ztf} \\ 
+		IC200916A & 109.78 & +14.36 & 4.2 & 3.6 & 32\% & \cite{ic200916a, ic200916a_ztf, ic200916a_ztf2} \\ 
+		IC200926A & 96.46 & -4.33 & 1.7 & 1.3 & 44\% & \cite{ic200926a, ic200926a_ztf} \\ 
+		IC200929A & 29.53 & +3.47 & 1.1 & 0.9 & 47\% & \cite{ic200929a, ic200929a_ztf} \\ 
+		IC201007A & 265.17 & +5.34 & 0.6 & 0.5 & 88\% & \cite{ic201007a, ic201007a_ztf} \\ 
+		IC201021A & 260.82 & +14.55 & 6.9 & 6.3 & 30\% & \cite{ic201021a, ic201021a_ztf} \\ 
+		IC201130A & 30.54 & -12.10 & 5.4 & 4.5 & 15\% & \cite{ic201130a, ic201130a_ztf} \\ 
+		IC201209A & 6.86 & -9.25 & 4.7 & 3.2 & 19\% & \cite{ic201209a, ic201209a_ztf} \\ 
+		IC201222A & 206.37 & +13.44 & 1.5 & 1.0 & 53\% & \cite{ic201222a, ic201222a_ztf} \\ 
+		IC210210A & 206.06 & +4.78 & 2.8 & 2.1 & 65\% & \cite{ic210210a, ic210210a_ztf} \\ 
+		IC210510A & 268.42 & +3.81 & 4.0 & 4.0 & 28\% & \cite{ic210510a, ic210510a_ztf} \\ 
+		
+		\hline
+	\end{tabular}
+	\caption{Summary of the 21 neutrino alerts followed up by ZTF since survey start on 2018 March 20.}
+	\label{tab:nu_alerts}
+\end{table*})
+
  
  \begin{table*}
  	\centering
@@ -76,8 +118,43 @@ Those alerts not observed by ZTF are summarised in Table \ref{tab:nu_non_observe
  		\hline
  	\end{tabular}
  	\caption{\textbf{Summary of the 23 neutrino alerts that were not followed up by ZTF since survey start on 2018 March 20.} Of these, 4/23 were retracted, 11/23 were inaccessible to ZTF for various reasons, 6/23 were deemed alerts of poor quality, while just 2/23 were alerts that were missed although they passed our criteria.}
- 	\label{tab:nu_non_observed}
+ 	\label{tab:nu_non_observed_old}
  \end{table*}
+
+\begin{table*}
+	\centering
+	\begin{tabular}{||c c ||} 
+		\hline
+		\textbf{Cause} & \textbf{Events} \\
+		\hline
+		Alert Retraction & IC180423A \cite{ic180423a}, IC181031A \cite{ic181031a}, IC190205A \cite{ic190205a}, IC190529A \cite{ic190529a} \\ 
+		& IC200120A \cite{ic200120a}, IC200728A \cite{ic200728a}, IC201115B \cite{ic201115b}, IC210213A \cite{ic210213a} \\ 
+		& IC210322A \cite{ic210322a}, IC210519A \cite{ic210519a} \\ 
+		\hline 
+		Proximity to Sun & IC180908A \cite{ic180908a}, IC181014A \cite{ic181014a}, IC190124A \cite{ic190124a}, IC190704A \cite{ic190704a} \\ 
+		& IC190712A \cite{ic190712a}, IC190819A \cite{ic190819a}, IC191119A \cite{ic191119a}, IC200227A \cite{ic200227a} \\ 
+		& IC200421A \cite{ic200421a}, IC200615A \cite{ic200615a}, IC200806A \cite{ic200806a}, IC200921A \cite{ic200921a} \\ 
+		& IC200926B \cite{ic200926b}, IC201014A \cite{ic201014a}, IC201115A \cite{ic201115a}, IC201221A \cite{ic201221a} \\ 
+		Low Altitude & IC191215A \cite{ic191215a} \\ 
+		Southern Sky & IC190331A \cite{ic190331a}, IC190504A \cite{ic190504a} \\ 
+		Separation from Galactic Plane & IC201114A \cite{ic201114a}, IC201120A \cite{ic201120a}, IC210516A \cite{ic210516a} \\ 
+		\hline 
+		Poor Signalness and Localisation & IC190221A \cite{ic190221a}, IC190629A \cite{ic190629a}, IC190922A \cite{ic190922a}, IC191122A \cite{ic191122a} \\ 
+		& IC191204A \cite{ic191204a}, IC191231A \cite{ic191231a}, IC200410A \cite{ic200410a}, IC200425A \cite{ic200425a} \\ 
+		& IC200523A \cite{ic200523a}, IC200614A \cite{ic200614a}, IC200911A \cite{ic200911a}, IC210503A \cite{ic210503a} \\ 
+		& IC210608A \cite{ic210608a} \\ 
+		\hline 
+		Telescope Maintenance & IC181023A \cite{ic181023a} \\ 
+		\hline 
+		
+	\end{tabular}
+	\caption{Summary of the 46 neutrino alerts that were not followed up by ZTF since survey start on 2018 March 20.}
+	\label{tab:nu_non_observed}
+\end{table*}
+
+
+
+
 
 %\begin{table*}
 %	\centering
@@ -175,18 +252,23 @@ Those alerts not observed by ZTF are summarised in Table \ref{tab:nu_non_observe
 \subsection{AT2019fdr}
 \label{sec:at2019fdr}
 
-ZTF serendipitously observed the localisation of neutrino IC200530A just 10 minutes after detection, as part of routine survey operations \sidecite{ic200530a}. Additional ToO observations were then conducted on 2020 May 31 in g- and r-band, and again on 2020 June 1. At this point AT2019fdr was identified by the pipeline as a candidate neutrino source  \sidecite{ic200530a_ztf}. The transient AT2019fdr had originally been discovered by ZTF on 2019 May 03 \cite{at2019fdr_ampel_disc}, but remained in a significantly-elevated flux state at the time of neutrino detection (see Figure \ref{fig:AT2019fdr_lightcurve}). 
+ZTF serendipitously observed the localisation of neutrino IC200530A just 10 minutes after detection, as part of routine survey operations \sidecite{ic200530a}. Additional ToO observations were then conducted on 2020 May 31 in g- and r-band, and again on 2020 June 1. At this point AT2019fdr was identified by the pipeline as a candidate neutrino source  \sidecite{ic200530a_ztf}. The transient AT2019fdr had originally been discovered by ZTF on 2019 May 03 \cite{at2019fdr_ampel_disc}, but remained in a significantly-elevated flux state at the time of neutrino detection (see Figure \ref{fig:at2019fdr_lightcurve}). 
 
 \begin{figure}[!ht]
 	\centering \includegraphics{ZTF/AT2019fdr_lightcurve}
 	\caption{ZTF lightcurve of AT2019fdr, with observations in g, r and i band. }
-	\label{fig:AT2019fdr_lightcurve}
+	\label{fig:at2019fdr_lightcurve}
 \end{figure}
 
-A spectrum of the object was taken on 2019 June 8, which gave an ambiguous classification but found a redshift of 0.267 on the basis of nebular emission lines (see Figure \ref{fig:spectra}). Given the consistency of the transient position with the host nucleus, and the bright nature of transient, there was initially considerable interest in this object as a possible TDE or superluminous supernova (SLSN). As can be seen in Figure \ref{fig:AT2019fdr_lightcurve}, the transient peaked at an absolute magnitude of -22.8 in i-band, with little apparent fading through to the detection of the neutrino 10 months later. 
+A spectrum of the object was taken on 2019 June 8, which gave an ambiguous classification but found a redshift of 0.267 on the basis of nebular emission lines (see Figure \ref{fig:at2019fdr_spectra}). Given the consistency of the transient position with the host nucleus, and the bright nature of transient, there was initially considerable interest in this object as a possible TDE or superluminous supernova (SLSN). As can be seen in Figure \ref{fig:at2019fdr_lightcurve}, the transient peaked at an absolute magnitude of -22.8 in i-band, with little apparent fading through to the detection of the neutrino 10 months later. 
 
-The object was tentatively classified as a luminous Type IIn supernova, though the possibility of an AGN classification was also mentioned \cite{at2019fdr_tns_class}.
-Given the lack of temperature evolution over the subsequent 10 months of observation, a supernova classification seems unlikely. Instead, AT2019fdr more likely belongs to a recently-identified class of flares in Narrow-line Seyfert galaxies \sidecite{trakhtenbrot19}. Indeed, our late-time spectroscopy (Figure \ref{fig:spectra}) reveals iron emission lines  characteristic of these flares.
+\begin{figure}[!ht]
+	\centering \includegraphics{ZTF/AT2019fdr_lightcurve}
+	\caption{ZTF lightcurve of AT2019fdr, with observations in g, r and i band. }
+	\label{fig:at2019fdr_spectra}
+\end{figure}
+
+The object was tentatively classified as a luminous Type IIn supernova, though the possibility of an AGN classification was also mentioned \cite{at2019fdr_tns_class}. Given the lack of temperature evolution over the subsequent 10 months of observation, a supernova classification seems unlikely. Instead, AT2019fdr more likely belongs to a recently-identified class of flares in Narrow-line Seyfert galaxies \sidecite{trakhtenbrot19}. Indeed, our late-time spectroscopy (Figure \ref{fig:at2019fdr_spectra}) reveals iron emission lines  characteristic of these flares.
 
 Flares that fall into the spectroscopic class defined by \sidecite{trakhtenbrot19} all occurred in Narrow-Line Seyfert\,1 (NLS1) galaxies. They show a large long-duration flare which leads to a sustained flux increase on timescales of many months, with little apparent temperature or color evolution. Such flares also have characteristic spectroscopic features, namely emission lines at $\lambda4640$ and $\lambda4686$ as well as an OIII-complex, which distinguish them from other objects. These signatures are also present for AT2019fdr (red and blue lines in Figure \ref{fig:at2019fdr_spectra}).
 
